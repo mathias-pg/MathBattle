@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://intpobk35g8s"]
+
+[ext_resource type="Script" path="res://mainMenu/page_accueil.gd" id="1_dgfws"]
+[ext_resource type="Texture2D" uid="uid://cisk33fr45qx3" path="res://mainMenu/ecran_accueil.jpg" id="1_gtyvk"]
+[ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://fonts/Softizen.otf" id="2_ujjrl"]
+[ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://fonts/Blinky Star.otf" id="3_35fwm"]
+[ext_resource type="Texture2D" uid="uid://c6a5gwjns1i0j" path="res://cards/carreau/moins1.png" id="5_p6e84"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdev1"]
+font = ExtResource("2_ujjrl")
+font_size = 55
+font_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0.537408, 0.522074, 0.999994, 1)
+shadow_offset = Vector2(3, 3)
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dgfws")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gtyvk")
+expand_mode = 3
+
+[node name="Titre" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -183.0
+offset_top = 127.0
+offset_right = 184.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "MATHBATTLE"
+label_settings = SubResource("LabelSettings_vdev1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -42.0
+offset_right = 193.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="BtnJoueur" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_35fwm")
+theme_override_font_sizes/font_size = 30
+text = "Jouer contre un autre joueur"
+
+[node name="BtnBot" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_35fwm")
+theme_override_font_sizes/font_size = 30
+text = "Jouer contre un bot"
+
+[node name="BtnQuitter" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_35fwm")
+theme_override_font_sizes/font_size = 30
+text = "Quitter"
+
+[node name="Moins1" type="Sprite2D" parent="."]
+position = Vector2(-713, 1919)
+scale = Vector2(0.172414, 0.157895)
+texture = ExtResource("5_p6e84")
+
+[connection signal="button_down" from="VBoxContainer/BtnQuitter" to="." method="_on_btn_quitter_button_down"]
