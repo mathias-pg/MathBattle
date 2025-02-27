@@ -1,0 +1,41 @@
+extends Node
+
+var CARD_TEXTURES = {
+	"+1": "res://Cards/pique/plus1.png",
+	"+2": "res://Cards/pique/plus2.png",
+	"+3": "res://Cards/pique/plus3.png",
+	"+4": "res://Cards/pique/plus4.png",
+	"+5": "res://Cards/pique/plus5.png",
+	"+6": "res://Cards/pique/plus6.png",
+	"+7": "res://Cards/pique/plus7.png",
+	"+8": "res://Cards/pique/plus8.png",
+	"+9": "res://Cards/pique/plus9.png",
+	
+	"x2": "res://Cards/trèfle/fois2.png",
+	"x3": "res://Cards/trèfle/fois3.png",
+	"x4": "res://Cards/trèfle/fois4.png",
+	"x5": "res://Cards/trèfle/fois5.png",
+	"x6": "res://Cards/trèfle/fois6.png",
+	"x7": "res://Cards/trèfle/fois7.png",
+	"x8": "res://Cards/trèfle/fois8.png",
+	"x9": "res://Cards/trèfle/fois9.png",
+	
+	"-1": "res://Cards/carreau/moins1.png",
+	"-2": "res://Cards/carreau/moins2.png",
+	"-3": "res://Cards/carreau/moins3.png",
+	"-4": "res://Cards/carreau/moins4.png",
+	"-5": "res://Cards/carreau/moins5.png",
+	"-6": "res://Cards/carreau/moins6.png",
+	"-7": "res://Cards/carreau/moins7.png",
+	"-8": "res://Cards/carreau/moins8.png",
+	"-9": "res://Cards/carreau/moins9.png",
+	
+	"÷2": "res://Cards/coeur/diviser2.png",
+	"÷3": "res://Cards/coeur/diviser3.png",
+	"÷4": "res://Cards/coeur/diviser4.png",
+	"÷5": "res://Cards/coeur/diviser5.png",
+	"÷6": "res://Cards/coeur/diviser6.png",
+	"÷7": "res://Cards/coeur/diviser7.png",
+	"÷8": "res://Cards/coeur/diviser8.png",
+	"÷9": "res://Cards/coeur/diviser9.png",
+	}

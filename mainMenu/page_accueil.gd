@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_btn_quitter_button_down() -> void:
 	get_tree().quit()
+
+
+func _on_btn_bot_button_down() -> void:
+	get_tree().change_scene_to_file("res://singlePlayer/single_player.tscn")

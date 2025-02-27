@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cof41m5s0sjwj"]
+
+[ext_resource type="Script" path="res://cards/card.gd" id="1_tigaw"]
+
+[node name="Card" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tigaw")

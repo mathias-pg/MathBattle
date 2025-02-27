@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://intpobk35g8s"]
+[gd_scene load_steps=6 format=3 uid="uid://intpobk35g8s"]
 
 [ext_resource type="Script" path="res://mainMenu/page_accueil.gd" id="1_dgfws"]
 [ext_resource type="Texture2D" uid="uid://cisk33fr45qx3" path="res://mainMenu/ecran_accueil.jpg" id="1_gtyvk"]
 [ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://fonts/Softizen.otf" id="2_ujjrl"]
 [ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://fonts/Blinky Star.otf" id="3_35fwm"]
-[ext_resource type="Texture2D" uid="uid://c6a5gwjns1i0j" path="res://cards/carreau/moins1.png" id="5_p6e84"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vdev1"]
 font = ExtResource("2_ujjrl")
@@ -79,9 +78,5 @@ theme_override_fonts/font = ExtResource("3_35fwm")
 theme_override_font_sizes/font_size = 30
 text = "Quitter"
 
-[node name="Moins1" type="Sprite2D" parent="."]
-position = Vector2(-713, 1919)
-scale = Vector2(0.172414, 0.157895)
-texture = ExtResource("5_p6e84")
-
+[connection signal="button_down" from="VBoxContainer/BtnBot" to="." method="_on_btn_bot_button_down"]
 [connection signal="button_down" from="VBoxContainer/BtnQuitter" to="." method="_on_btn_quitter_button_down"]
