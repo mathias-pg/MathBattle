@@ -38,4 +38,4 @@ var CARD_TEXTURES = {
 	"÷7": "res://Cards/coeur/diviser7.png",
 	"÷8": "res://Cards/coeur/diviser8.png",
 	"÷9": "res://Cards/coeur/diviser9.png",
-	}
+}
