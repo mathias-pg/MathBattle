@@ -2,6 +2,8 @@ extends Node2D
 
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
+const DEFAULT_CARD_MOUV_SPEED= 0.1
+
 var card_being_dragged
 var screen_size
 var is_hovering_on_card
@@ -32,7 +34,7 @@ func finish_drag():
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		card_slot_found.card_in_slot = true
 	else:
-		player_hand_reference.add_card_to_hand(card_being_dragged)
+		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_MOUV_SPEED)
 	card_being_dragged = null
 	
 func on_left_click_released():

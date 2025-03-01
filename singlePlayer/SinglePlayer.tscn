@@ -28,10 +28,10 @@ script = SubResource("GDScript_c7xu6")
 script = ExtResource("2_cmgho")
 
 [node name="CardSlotPlayer" parent="." instance=ExtResource("4_180bv")]
-position = Vector2(896, 532)
+position = Vector2(872, 526)
 
 [node name="CardSlotOtherPlayer" parent="." instance=ExtResource("4_180bv")]
-position = Vector2(1077, 533)
+position = Vector2(1053, 527)
 
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("4_qw3rp")
