@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d33fbwf8g0s77"
-path="res://.godot/imported/Softizen.otf-0356b82810fd5aa16cfaefa566bb4b85.fontdata"
+path="res://.godot/imported/Softizen.otf-5c90d2fbac4c34707d93339e9bb74c37.fontdata"
 
 [deps]
 
-source_file="res://fonts/Softizen.otf"
-dest_files=["res://.godot/imported/Softizen.otf-0356b82810fd5aa16cfaefa566bb4b85.fontdata"]
+source_file="res://Fonts/Softizen.otf"
+dest_files=["res://.godot/imported/Softizen.otf-5c90d2fbac4c34707d93339e9bb74c37.fontdata"]
 
 [params]
 

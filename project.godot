@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MathBattle"
-run/main_scene="res://mainMenu/PageAccueil.tscn"
+run/main_scene="res://MainMenu/PageAccueil.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gtgdakdots7y"
-path="res://.godot/imported/fois2.png-8845907f9213b86c98b5be192f72aa5c.ctex"
+path="res://.godot/imported/fois2.png-9eff5f9d33f123bf79ae873549a37358.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/trèfle/fois2.png"
-dest_files=["res://.godot/imported/fois2.png-8845907f9213b86c98b5be192f72aa5c.ctex"]
+source_file="res://Cards/trèfle/fois2.png"
+dest_files=["res://.godot/imported/fois2.png-9eff5f9d33f123bf79ae873549a37358.ctex"]
 
 [params]
 

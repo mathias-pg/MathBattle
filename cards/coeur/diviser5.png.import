@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du6xui08nah45"
-path="res://.godot/imported/diviser5.png-76c60cf226895ec04397fccc3bcf7826.ctex"
+path="res://.godot/imported/diviser5.png-d0bdedec3dd6a210e7ffc57465a89277.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/coeur/diviser5.png"
-dest_files=["res://.godot/imported/diviser5.png-76c60cf226895ec04397fccc3bcf7826.ctex"]
+source_file="res://Cards/coeur/diviser5.png"
+dest_files=["res://.godot/imported/diviser5.png-d0bdedec3dd6a210e7ffc57465a89277.ctex"]
 
 [params]
 

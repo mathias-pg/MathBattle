@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bd0xsjc2v0spu"]
 
-[ext_resource type="Script" path="res://cards/CardManager.gd" id="2_cmgho"]
-[ext_resource type="PackedScene" uid="uid://fwsjyr0jrj1b" path="res://cards/CardSlot.tscn" id="4_180bv"]
-[ext_resource type="Script" path="res://singlePlayer/Deck.gd" id="4_n18px"]
-[ext_resource type="Script" path="res://singlePlayer/PlayerHand.gd" id="4_qw3rp"]
-[ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://cards/arriere_carte.png" id="5_mmgy7"]
-[ext_resource type="Script" path="res://singlePlayer/InputManager.gd" id="6_fssk3"]
+[ext_resource type="Script" path="res://Cards/CardManager.gd" id="2_cmgho"]
+[ext_resource type="PackedScene" uid="uid://fwsjyr0jrj1b" path="res://Cards/CardSlot.tscn" id="4_180bv"]
+[ext_resource type="Script" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
+[ext_resource type="Script" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
+[ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="5_mmgy7"]
+[ext_resource type="Script" path="res://SinglePlayer/InputManager.gd" id="6_fssk3"]
 
 [sub_resource type="GDScript" id="GDScript_c7xu6"]
 script/source = "extends Node2D

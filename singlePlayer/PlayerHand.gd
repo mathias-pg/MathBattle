@@ -1,21 +1,30 @@
 extends Node2D
 
 const HAND_COUNT = 5
-const CARD_SCENE_PATH = "res://cards/Card.tscn"
+const CARD_SCENE_PATH = "res://Cards/Card.tscn"
 const CARD_WIDTH = 200
 const HAND_Y_POSITION = 890
 const DEFAULT_CARD_MOUV_SPEED = 0.1
 
 var player_hand = []
 var center_screen_x
+var card_database_reference
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	card_database_reference = preload("res://Cards/CardDataBase.gd")
 	center_screen_x = get_viewport().size.x / 2
 	
 	var card_scene = preload(CARD_SCENE_PATH)
 	for i in range(HAND_COUNT):
+		var keys = card_database_reference.CARD_TEXTURES.keys()
+		var random_index = randi() % keys.size() 
+		var random_key = keys[random_index]
+		var random_path = card_database_reference.CARD_TEXTURES[random_key]
+	
 		var new_card = card_scene.instantiate()
+		var sprite_node = new_card.get_node("CardImage")
+		sprite_node.texture = load(random_path)
 		$"../CardManager".add_child(new_card)
 		new_card.name = "Card"
 		add_card_to_hand(new_card, DEFAULT_CARD_MOUV_SPEED)

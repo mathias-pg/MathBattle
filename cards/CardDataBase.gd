@@ -1,6 +1,6 @@
 extends Node
 
-var CARD_TEXTURES = {
+static var	 CARD_TEXTURES = {
 	"+1": "res://Cards/pique/plus1.png",
 	"+2": "res://Cards/pique/plus2.png",
 	"+3": "res://Cards/pique/plus3.png",

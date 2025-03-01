@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rtgiak0ehdpb"
-path="res://.godot/imported/arriere_carte.png-eef1b41c347be5bbbafc2839a984e58e.ctex"
+path="res://.godot/imported/arriere_carte.png-7318de356fc5ca5cf13e390ace935794.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/arriere_carte.png"
-dest_files=["res://.godot/imported/arriere_carte.png-eef1b41c347be5bbbafc2839a984e58e.ctex"]
+source_file="res://Cards/arriere_carte.png"
+dest_files=["res://.godot/imported/arriere_carte.png-7318de356fc5ca5cf13e390ace935794.ctex"]
 
 [params]
 

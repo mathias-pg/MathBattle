@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b13dd4a73bp7f"
-path="res://.godot/imported/Blinky Star.otf-664ee4fddc4e02e797a5514acae84c6a.fontdata"
+path="res://.godot/imported/Blinky Star.otf-9a054fecee2a7de72f402aeb4a1e29e0.fontdata"
 
 [deps]
 
-source_file="res://fonts/Blinky Star.otf"
-dest_files=["res://.godot/imported/Blinky Star.otf-664ee4fddc4e02e797a5514acae84c6a.fontdata"]
+source_file="res://Fonts/Blinky Star.otf"
+dest_files=["res://.godot/imported/Blinky Star.otf-9a054fecee2a7de72f402aeb4a1e29e0.fontdata"]
 
 [params]
 
