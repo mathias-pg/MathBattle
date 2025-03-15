@@ -1,17 +1,131 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcrs8dufckikj"]
+[gd_scene load_steps=8 format=3 uid="uid://dcrs8dufckikj"]
 
 [ext_resource type="Script" path="res://Cards/Card.gd" id="1_nl2t5"]
 [ext_resource type="Texture2D" uid="uid://fo5bd1ei3mns" path="res://Cards/pique/plus1.png" id="1_stfrd"]
+[ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="2_1objf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sriow"]
 size = Vector2(112, 156)
+
+[sub_resource type="Animation" id="Animation_dowin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardImage:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.0385345, 0.0410526)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardImage:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardImageBack:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.0386207, 0.0410526)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CardImageBack:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+
+[sub_resource type="Animation" id="Animation_annjg"]
+resource_name = "card_flip"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardImage:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.0385345, 0.0410526), Vector2(0.005, 0.041), Vector2(0.039, 0.041)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardImage:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardImageBack:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.0386207, 0.0410526), Vector2(0.005, 0.041), Vector2(0.039, 0.041)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CardImageBack:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, -1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gqasr"]
+_data = {
+"RESET": SubResource("Animation_dowin"),
+"card_flip": SubResource("Animation_annjg")
+}
 
 [node name="Card" type="Node2D"]
 position = Vector2(1600, 530)
 script = ExtResource("1_nl2t5")
 
+[node name="CardImageBack" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.0386207, 0.0410526)
+texture = ExtResource("2_1objf")
+
 [node name="CardImage" type="Sprite2D" parent="."]
-position = Vector2(0.124994, -3.75509e-06)
+position = Vector2(5.79283e-05, -3.75509e-06)
 scale = Vector2(0.0385345, 0.0410526)
 texture = ExtResource("1_stfrd")
 
@@ -19,6 +133,11 @@ texture = ExtResource("1_stfrd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_sriow")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gqasr")
+}
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
