@@ -27,6 +27,8 @@ func _ready() -> void:
 		sprite_node.texture = load(random_path)
 		$"../CardManager".add_child(new_card)
 		new_card.name = "Card"
+		new_card.card_value = card_database_reference.CARD_VALUES[random_key]
+		new_card.card_sign = card_database_reference.CARD_SIGNS[random_key]
 		add_card_to_hand(new_card, DEFAULT_CARD_MOUV_SPEED)
 		
 func add_card_to_hand(card, speed):

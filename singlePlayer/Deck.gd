@@ -21,6 +21,8 @@ func draw_card():
 	sprite_node.texture = load(random_path)
 	$"../CardManager".add_child(new_card)
 	new_card.name = "Card"
+	new_card.card_value = card_database_reference.CARD_VALUES[random_key]
+	new_card.card_sign = card_database_reference.CARD_SIGNS[random_key]
 	$"../PlayerHand".add_card_to_hand(new_card, CARD_DRAW_SPEED)
 	new_card.get_node("AnimationPlayer").play("card_flip")
 
