@@ -1,36 +1,27 @@
-[gd_scene load_steps=9 format=3 uid="uid://bd0xsjc2v0spu"]
+[gd_scene load_steps=10 format=3 uid="uid://bd0xsjc2v0spu"]
 
+[ext_resource type="Script" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" path="res://Cards/CardManager.gd" id="2_cmgho"]
 [ext_resource type="PackedScene" uid="uid://fwsjyr0jrj1b" path="res://Cards/CardSlot.tscn" id="4_180bv"]
 [ext_resource type="Script" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
 [ext_resource type="Script" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
 [ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="5_mmgy7"]
 [ext_resource type="Script" path="res://SinglePlayer/InputManager.gd" id="6_fssk3"]
-
-[sub_resource type="GDScript" id="GDScript_c7xu6"]
-script/source = "extends Node2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
+[ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://Fonts/Softizen.otf" id="8_t4ucr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo0al"]
 size = Vector2(112, 156)
 
 [node name="SinglePlayer" type="Node2D"]
-script = SubResource("GDScript_c7xu6")
+script = ExtResource("1_lxhxw")
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("2_cmgho")
 
-[node name="CardSlotPlayer" parent="." instance=ExtResource("4_180bv")]
+[node name="CardSlotOtherPlayer" parent="." instance=ExtResource("4_180bv")]
 position = Vector2(872, 526)
 
-[node name="CardSlotOtherPlayer" parent="." instance=ExtResource("4_180bv")]
+[node name="CardSlotPlayer" parent="." instance=ExtResource("4_180bv")]
 position = Vector2(1053, 527)
 
 [node name="PlayerHand" type="Node2D" parent="."]
@@ -54,3 +45,37 @@ shape = SubResource("RectangleShape2D_qo0al")
 
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("6_fssk3")
+
+[node name="LabelTargetScore" type="Label" parent="."]
+offset_left = 420.0
+offset_top = 490.0
+offset_right = 561.0
+offset_bottom = 513.0
+theme_override_fonts/font = ExtResource("8_t4ucr")
+theme_override_font_sizes/font_size = 20
+text = "Score a atteindre :"
+
+[node name="LabelScore" type="Label" parent="."]
+offset_left = 510.0
+offset_top = 530.0
+offset_right = 550.0
+offset_bottom = 564.0
+theme_override_fonts/font = ExtResource("8_t4ucr")
+theme_override_font_sizes/font_size = 25
+text = "0"
+
+[node name="MaTable" type="Label" parent="."]
+offset_left = 1012.0
+offset_top = 420.0
+offset_right = 1092.0
+offset_bottom = 443.0
+theme_override_fonts/font = ExtResource("8_t4ucr")
+text = "Ma Table"
+
+[node name="TableAdverse" type="Label" parent="."]
+offset_left = 808.0
+offset_top = 420.0
+offset_right = 936.0
+offset_bottom = 443.0
+theme_override_fonts/font = ExtResource("8_t4ucr")
+text = "Table Adverse"

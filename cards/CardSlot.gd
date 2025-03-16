@@ -4,7 +4,6 @@ var card_in_slot = false
 var label_score_reference
 
 func _ready():
-	$Area2D/LabelScore
 	label_score_reference = $Area2D/LabelScore
 
 func on_card_dropped(card):
@@ -36,10 +35,19 @@ func _on_calculation_done(success: bool, card):
 			"÷":
 				if card.card_value != 0:
 					slot_score = int(slot_score / card.card_value)
-		
+
 		label_score_reference.text = str(slot_score)
-	
+
+		var current_scene = get_tree().get_current_scene()
+
+		if slot_score == current_scene.target_score:
+			if self.name == "CardSlotPlayer":
+				print("Le joueur a atteint le score exact ! Victoire du joueur.")
+			else:
+				print("L'adversaire a atteint le score exact ! Victoire de l'adversaire.")
+
 	fade_out_and_remove_card(card)
+
 
 func fade_out_and_remove_card(card):
 	card.queue_free()
