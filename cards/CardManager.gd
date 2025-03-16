@@ -33,6 +33,7 @@ func finish_drag():
 		card_being_dragged.position = card_slot_found.position
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		card_slot_found.card_in_slot = true
+		card_slot_found.on_card_dropped(card_being_dragged)
 	else:
 		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_MOUV_SPEED)
 	card_being_dragged = null
