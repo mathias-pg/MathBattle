@@ -42,9 +42,9 @@ func _on_calculation_done(success: bool, card):
 
 		if slot_score == current_scene.target_score:
 			if self.name == "CardSlotPlayer":
-				print("Le joueur a atteint le score exact ! Victoire du joueur.")
+				get_tree().change_scene_to_file("res://MainMenu/Victory.tscn")
 			else:
-				print("L'adversaire a atteint le score exact ! Victoire de l'adversaire.")
+				get_tree().change_scene_to_file("res://MainMenu/Loose.tscn")
 
 	fade_out_and_remove_card(card)
 

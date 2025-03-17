@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://d061acb2abbpj"]
+
+[ext_resource type="Script" path="res://MainMenu/Victory.gd" id="1_kxb1l"]
+[ext_resource type="Texture2D" uid="uid://cdovjoucjqv6b" path="res://MainMenu/victoire.png" id="2_emm4u"]
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kxb1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.854575, 0.869472)
+texture = ExtResource("2_emm4u")
+
+[node name="BtnMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 853.0
+offset_top = 786.0
+offset_right = 1062.0
+offset_bottom = 817.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Retour au Menu Prinicipal"
+
+[connection signal="button_down" from="BtnMenu" to="." method="_on_btn_menu_button_down"]

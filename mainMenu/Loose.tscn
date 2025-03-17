@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://pgtubjbok34n"]
+
+[ext_resource type="Script" path="res://MainMenu/Loose.gd" id="1_ay685"]
+[ext_resource type="Texture2D" uid="uid://ddcjcomi4hvff" path="res://MainMenu/defaite.png" id="2_rchjb"]
+
+[node name="Loose" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ay685")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_rchjb")
+
+[node name="BtnMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 860.0
+offset_top = 839.0
+offset_right = 1065.0
+offset_bottom = 870.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Retour au Menu Principal"
+
+[connection signal="button_down" from="BtnMenu" to="." method="_on_btn_menu_button_down"]
