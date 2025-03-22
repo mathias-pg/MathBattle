@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd0xsjc2v0spu"]
+[gd_scene load_steps=13 format=3 uid="uid://bd0xsjc2v0spu"]
 
 [ext_resource type="Script" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" path="res://Cards/CardManager.gd" id="2_cmgho"]
@@ -6,8 +6,11 @@
 [ext_resource type="Script" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
 [ext_resource type="Script" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
 [ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="5_mmgy7"]
+[ext_resource type="Script" path="res://SinglePlayer/EnnemyHand.gd" id="5_qd2uy"]
 [ext_resource type="Script" path="res://SinglePlayer/InputManager.gd" id="6_fssk3"]
+[ext_resource type="Script" path="res://SinglePlayer/OpponentDeck.gd" id="8_7ng0o"]
 [ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://Fonts/Softizen.otf" id="8_t4ucr"]
+[ext_resource type="Script" path="res://SinglePlayer/BattleManager.gd" id="10_poomt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo0al"]
 size = Vector2(112, 156)
@@ -27,6 +30,9 @@ position = Vector2(1053, 527)
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("4_qw3rp")
 
+[node name="EnnemyHand" type="Node2D" parent="."]
+script = ExtResource("5_qd2uy")
+
 [node name="Deck" type="Node2D" parent="."]
 position = Vector2(1600, 530)
 script = ExtResource("4_n18px")
@@ -41,6 +47,17 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D"]
+shape = SubResource("RectangleShape2D_qo0al")
+
+[node name="OpponentDeck" type="Node2D" parent="."]
+position = Vector2(1600, 530)
+script = ExtResource("8_7ng0o")
+
+[node name="Area2D" type="Area2D" parent="OpponentDeck"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpponentDeck/Area2D"]
 shape = SubResource("RectangleShape2D_qo0al")
 
 [node name="InputManager" type="Node2D" parent="."]
@@ -79,3 +96,8 @@ offset_right = 936.0
 offset_bottom = 443.0
 theme_override_fonts/font = ExtResource("8_t4ucr")
 text = "Table Adverse"
+
+[node name="BattleManager" type="Node" parent="."]
+script = ExtResource("10_poomt")
+
+[node name="BattleTimer" type="Timer" parent="."]
