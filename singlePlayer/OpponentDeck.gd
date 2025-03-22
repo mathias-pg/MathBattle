@@ -21,6 +21,7 @@ func draw_card():
 		var card_scene = load(CARD_SCENE_PATH)
 		var new_card = card_scene.instantiate()
 		var sprite_node = new_card.get_node("CardImage")
+		sprite_node.visible = false
 		sprite_node.texture = load(random_path)
 		$"../CardManager".add_child(new_card)
 		new_card.name = "Card"

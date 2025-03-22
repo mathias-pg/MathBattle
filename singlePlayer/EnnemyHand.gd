@@ -52,8 +52,15 @@ func calculate_card_position(index):
 	return x_offset
 	
 func animate_card_to_position(card, new_position, speed):
+	# Vérifie que ce Node est toujours dans la scène
+	if not is_inside_tree():
+		return
+	if get_tree() == null:
+		return
+
 	var tween = get_tree().create_tween()
 	tween.tween_property(card, "position", new_position, speed)
+
 
 func remove_card_from_hand(card):
 	if card in player_hand:
