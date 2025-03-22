@@ -33,8 +33,13 @@ func _ready():
 	randomize()
 	target_score = randi() % (150 - 80 + 1) + 80
 	target_score_label.text = "Score à atteindre : " + str(target_score)
+	
+	# Démarre le tour du joueur
 	start_player_turn()
 
+# -----------------------
+#      Tour du joueur
+# -----------------------
 func start_player_turn():
 	current_turn = Turn.PLAYER
 	label_tour.text = "Tour du joueur"
@@ -44,6 +49,9 @@ func start_player_turn():
 func end_player_turn():
 	start_bot_turn()
 
+# -----------------------
+#      Tour du bot
+# -----------------------
 func start_bot_turn():
 	current_turn = Turn.BOT
 	label_tour.text = "Tour du bot"
@@ -67,7 +75,7 @@ func opponent_turn() -> void:
 
 func animate_bot_card_drop(card, slot):
 	var tween = get_tree().create_tween()
-	tween.tween_property(card, "position", slot.position, 1.0)
+	tween.tween_property(card, "position", slot.position, 0.5)
 	tween.tween_callback(Callable(self, "_on_bot_card_landed").bind(card, slot))
 
 func _on_bot_card_landed(card, slot):
@@ -79,11 +87,17 @@ func _on_bot_card_landed(card, slot):
 	var current_score = int(slot.label_score_reference.text)
 	var new_score = apply_operation(current_score, card.card_sign, card.card_value)
 	slot.label_score_reference.text = str(new_score)
+	
+	# Vérifie si le score de ce slot est égal au target_score.
+	if check_win(slot):
+		win_bot()
+		return
 
 	var wait_tween = get_tree().create_tween()
-	wait_tween.tween_interval(2.0)
+	wait_tween.tween_interval(1.0)
 	wait_tween.tween_callback(Callable(self, "_on_bot_card_disappear").bind(card))
 	slot.card_in_slot = false
+
 
 func _on_bot_card_disappear(card):
 	card.queue_free()
@@ -95,6 +109,9 @@ func set_player_cards_interaction(active: bool) -> void:
 			var collision_shape = card.get_node("Area2D/CollisionShape2D")
 			collision_shape.disabled = not active
 
+# --------------------------------------------------------------------
+#                 IA DU BOT : PARTIE AMÉLIORÉE
+# --------------------------------------------------------------------
 class BotMove:
 	var card
 	var slot
@@ -105,29 +122,74 @@ class BotMove:
 func choose_bot_move() -> BotMove:
 	var enemy_score = int(enemy_slot.label_score_reference.text)
 	var player_score = int(player_slot.label_score_reference.text)
+
 	var best_move: BotMove = null
-	var best_diff = INF
+	var best_score = -INF  # On cherche à maximiser cette "note"
 
+	# Pour chaque carte de la main du bot, on teste 2 hypothèses :
+	# - La poser sur la table du bot
+	# - La poser sur la table du joueur
 	for card in enemy_hand.player_hand:
+		# Hypothèse A : poser sur la table du bot
 		var new_enemy_score = apply_operation(enemy_score, card.card_sign, card.card_value)
-		var diff_enemy = abs(new_enemy_score - target_score)
-		var new_player_score = apply_operation(player_score, card.card_sign, card.card_value)
-		var diff_player = abs(new_player_score - target_score)
-
-		if new_enemy_score == target_score:
-			return BotMove.new(card, enemy_slot)
-		if diff_enemy < abs(enemy_score - target_score) and diff_enemy < best_diff:
-			best_diff = diff_enemy
+		var measure_a = evaluate_move(enemy_score, player_score, new_enemy_score, player_score, card.card_sign, true)
+		if measure_a > best_score:
+			best_score = measure_a
 			best_move = BotMove.new(card, enemy_slot)
-		elif diff_player > abs(player_score - target_score):
-			var delta = diff_player - abs(player_score - target_score)
-			if delta > best_diff:
-				best_diff = delta
-				best_move = BotMove.new(card, player_slot)
-	if best_move == null and enemy_hand.player_hand.size() > 0:
-		best_move = BotMove.new(enemy_hand.player_hand[0], enemy_slot)
+
+		# Hypothèse B : poser sur la table du joueur
+		var new_player_score = apply_operation(player_score, card.card_sign, card.card_value)
+		var measure_b = evaluate_move(enemy_score, player_score, enemy_score, new_player_score, card.card_sign, false)
+		if measure_b > best_score:
+			best_score = measure_b
+			best_move = BotMove.new(card, player_slot)
+
 	return best_move
 
+# Évalue un coup en tenant compte :
+# - de la variation du bot par rapport à target_score
+# - de la variation du joueur par rapport à target_score
+# - d'un bonus énorme si le bot atteint exactement la cible
+# - d'une pénalité si on met "-" ou "÷" sur la table du bot (sans gagner)
+func evaluate_move(
+	old_enemy_score: int,
+	old_player_score: int,
+	new_enemy_score: int,
+	new_player_score: int,
+	card_sign: String,
+	place_on_enemy_slot: bool
+) -> float:
+	# Distances avant
+	var old_diff_enemy = abs(old_enemy_score - target_score)
+	var old_diff_player = abs(old_player_score - target_score)
+	# Distances après
+	var new_diff_enemy = abs(new_enemy_score - target_score)
+	var new_diff_player = abs(new_player_score - target_score)
+
+	# On veut :
+	# - réduire la distance du bot
+	# - augmenter la distance du joueur
+	var delta_enemy = old_diff_enemy - new_diff_enemy  # + si on se rapproche
+	var delta_player = new_diff_player - old_diff_player  # + si le joueur s'éloigne
+
+	# Score de base
+	var score = delta_enemy * 2.0 + delta_player
+	# (On pondère plus le rapprochement du bot en multipliant par 2, 
+	#  et on ajoute la distance que le joueur prend.)
+
+	# Si le bot atteint la cible pile
+	if place_on_enemy_slot and new_diff_enemy == 0:
+		score += 9999  # Victoire instantanée
+
+	# Pénalité si c'est "-" ou "÷" sur la table du bot sans gagner
+	if place_on_enemy_slot and (card_sign == "-" or card_sign == "÷") and new_diff_enemy != 0:
+		score -= 10
+
+	return score
+
+# --------------------------------------------------------------------
+#     Application de l'opération (pas changé)
+# --------------------------------------------------------------------
 func apply_operation(current: int, sign: String, value: int) -> int:
 	match sign:
 		"+":
@@ -142,3 +204,12 @@ func apply_operation(current: int, sign: String, value: int) -> int:
 			else:
 				return current
 	return current
+
+
+func check_win(slot) -> bool:
+	var score = int(slot.label_score_reference.text)
+	return score == target_score
+
+func win_bot():
+	set_player_cards_interaction(false)
+	get_tree().change_scene_to_file("res://MainMenu/Loose.tscn")
