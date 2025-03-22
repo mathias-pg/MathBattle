@@ -47,6 +47,9 @@ func _on_calculation_done(success: bool, card):
 				get_tree().change_scene_to_file("res://MainMenu/Loose.tscn")
 
 	fade_out_and_remove_card(card)
+	
+	var battle_manager = $"../BattleManager"
+	battle_manager.end_player_turn()
 
 
 func fade_out_and_remove_card(card):
