@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg03ep4selgna"]
+
+[ext_resource type="Texture2D" uid="uid://o4b782uh84h8" path="res://Calculs/good.png" id="1_k6i8u"]
+[ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="2_rrsda"]
+
+[node name="CalculationTrue" type="Window"]
+initial_position = 2
+size = Vector2i(800, 400)
+
+[node name="Good" type="Sprite2D" parent="."]
+position = Vector2(285, 200)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_k6i8u")
+
+[node name="GoodReponse" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -11.5
+offset_right = 63.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.694118, 0.34902, 1)
+theme_override_fonts/font = ExtResource("2_rrsda")
+theme_override_font_sizes/font_size = 20
+text = "Bonne réponse !"

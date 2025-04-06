@@ -80,4 +80,18 @@ func _on_timer_timeout():
 func _end_calculation(success: bool):
 	$timer_countdown.stop()
 	hide()
+	
+	var feedback_scene_path : String
+	if success:
+		feedback_scene_path = "res://Calculs/CalculationTrue.tscn"
+	else:
+		feedback_scene_path = "res://Calculs/CalculationFalse.tscn"
+	var feedback_scene = load(feedback_scene_path).instantiate()
+	
+	get_tree().get_current_scene().add_child(feedback_scene)
+
+	await get_tree().create_timer(0.5).timeout
+	
+	feedback_scene.queue_free()
+	
 	emit_signal("calculation_done", success)
