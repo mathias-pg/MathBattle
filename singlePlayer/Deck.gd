@@ -28,6 +28,7 @@ func draw_card():
 		new_card.card_sign = card_database_reference.CARD_SIGNS[random_key]
 		$"../PlayerHand".add_card_to_hand(new_card, CARD_DRAW_SPEED)
 		new_card.get_node("AnimationPlayer").play("card_flip")
+		$"../AudioStreamPlayerFlipCard".play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

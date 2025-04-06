@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bd0xsjc2v0spu"]
+[gd_scene load_steps=16 format=3 uid="uid://bd0xsjc2v0spu"]
 
 [ext_resource type="Script" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" path="res://Cards/CardManager.gd" id="2_cmgho"]
@@ -12,6 +12,8 @@
 [ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://Fonts/Softizen.otf" id="8_t4ucr"]
 [ext_resource type="Script" path="res://SinglePlayer/BattleManager.gd" id="10_poomt"]
 [ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="11_ngfd3"]
+[ext_resource type="AudioStream" uid="uid://bslnr06y3kgr8" path="res://Songs/flipcard_sound.mp3" id="13_lscxn"]
+[ext_resource type="AudioStream" uid="uid://cthmf86x0x8q0" path="res://Songs/card_sound.mp3" id="14_hnqei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo0al"]
 size = Vector2(112, 156)
@@ -111,3 +113,10 @@ text = "Tour du joueur"
 script = ExtResource("10_poomt")
 
 [node name="BattleTimer" type="Timer" parent="BattleManager"]
+
+[node name="AudioStreamPlayerFlipCard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_lscxn")
+
+[node name="AudioStreamPlayerCardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_hnqei")
+volume_db = -4.394

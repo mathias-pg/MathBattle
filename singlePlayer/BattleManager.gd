@@ -66,6 +66,8 @@ func animate_bot_card_drop(card, slot):
 	var tween = get_tree().create_tween()
 	tween.tween_property(card, "position", slot.position, 0.5)
 	tween.tween_callback(Callable(self, "_on_bot_card_landed").bind(card, slot))
+	await get_tree().create_timer(0.5).timeout
+	$"../AudioStreamPlayerCardSound".play()
 
 func _on_bot_card_landed(card, slot):
 	slot.card_in_slot = true
