@@ -24,3 +24,9 @@ window/size/viewport_height=1080
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[importer_defaults]
+
+animation_library={
+&"import_script/path": "uid://cu8n23eob0skw"
+}

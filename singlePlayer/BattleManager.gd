@@ -1,10 +1,13 @@
 extends Node
 
 enum Turn { PLAYER, BOT }
+enum BotLevel { EASY, MEDIUM, HARD }
+
 var current_turn: Turn = Turn.PLAYER
+@export var current_bot_level: BotLevel = BotLevel.HARD
 
 @onready var battle_timer = $BattleTimer
-
+@onready var label_diff = $"../LabelDifficulte"
 @onready var label_tour = $"../LabelTour"
 @onready var target_score_label = $"../LabelScore"
 @onready var player_hand = $"../PlayerHand"
@@ -18,7 +21,8 @@ var target_score
 
 func give_card_if_needed(hand, deck):
 	if hand.player_hand.size() < 5:
-		deck.draw_card()
+		for i in range(hand.player_hand.size(), 5):
+			deck.draw_card()
 
 func _ready():
 	battle_timer.one_shot = true
@@ -27,9 +31,23 @@ func _ready():
 	randomize()
 	target_score = randi() % (150 - 80 + 1) + 80
 	target_score_label.text = "Score à atteindre : " + str(target_score)
-
+	
+	# Configuration du niveau de difficulté à partir de GlobalData.difficulty
+	match GlobalData.difficulty:
+		"easy":
+			current_bot_level = BotLevel.EASY
+			label_diff.text = "Easy"
+			label_diff.add_theme_color_override("font_color", Color(0, 1, 0))
+		"medium":
+			current_bot_level = BotLevel.MEDIUM
+			label_diff.text = "Medium"
+			label_diff.add_theme_color_override("font_color", Color(1, 1, 0))
+		"hard":
+			current_bot_level = BotLevel.HARD
+			label_diff.text = "Hard"
+			label_diff.add_theme_color_override("font_color", Color(1, 0, 0))
+	
 	start_player_turn()
-
 
 func start_player_turn():
 	current_turn = Turn.PLAYER
@@ -39,7 +57,6 @@ func start_player_turn():
 
 func end_player_turn():
 	start_bot_turn()
-
 
 func start_bot_turn():
 	current_turn = Turn.BOT
@@ -88,7 +105,6 @@ func _on_bot_card_landed(card, slot):
 	wait_tween.tween_callback(Callable(self, "_on_bot_card_disappear").bind(card))
 	slot.card_in_slot = false
 
-
 func _on_bot_card_disappear(card):
 	card.queue_free()
 	start_player_turn()
@@ -99,6 +115,7 @@ func set_player_cards_interaction(active: bool) -> void:
 			var collision_shape = card.get_node("Area2D/CollisionShape2D")
 			collision_shape.disabled = not active
 
+# --- Définition de la classe BotMove ---
 class BotMove:
 	var card
 	var slot
@@ -106,10 +123,34 @@ class BotMove:
 		self.card = card
 		self.slot = slot
 
-func choose_bot_move() -> BotMove:
+func choose_random_move() -> BotMove:
+	if enemy_hand.player_hand.size() == 0:
+		return null
+	var card = enemy_hand.player_hand[randi() % enemy_hand.player_hand.size()]
+	
+	if randi() % 2 == 0:
+		return BotMove.new(card, enemy_slot)
+	else:
+		return BotMove.new(card, player_slot)
+
+func choose_medium_move() -> BotMove:
+	var enemy_score = int(enemy_slot.label_score_reference.text)
+	var best_move: BotMove = null
+	var best_improvement = 0
+	for card in enemy_hand.player_hand:
+		var new_enemy_score = apply_operation(enemy_score, card.card_sign, card.card_value)
+		var improvement = abs(enemy_score - target_score) - abs(new_enemy_score - target_score)
+		if improvement > best_improvement:
+			best_improvement = improvement
+			best_move = BotMove.new(card, enemy_slot)
+	if best_move:
+		return best_move
+	else:
+		return choose_random_move()
+
+func choose_hard_move() -> BotMove:
 	var enemy_score = int(enemy_slot.label_score_reference.text)
 	var player_score = int(player_slot.label_score_reference.text)
-
 	var best_move: BotMove = null
 	var best_score = -INF  
 	
@@ -128,8 +169,18 @@ func choose_bot_move() -> BotMove:
 
 	return best_move
 
-func evaluate_move(old_enemy_score: int, old_player_score: int, new_enemy_score: int, new_player_score: int, card_sign: String, place_on_enemy_slot: bool) -> float:
+func choose_bot_move() -> BotMove:
+	match current_bot_level:
+		BotLevel.EASY:
+			return choose_random_move()
+		BotLevel.MEDIUM:
+			return choose_medium_move()
+		BotLevel.HARD:
+			return choose_hard_move()
+		_:
+			return choose_random_move()
 
+func evaluate_move(old_enemy_score: int, old_player_score: int, new_enemy_score: int, new_player_score: int, card_sign: String, place_on_enemy_slot: bool) -> float:
 	var old_diff_enemy = abs(old_enemy_score - target_score)
 	var old_diff_player = abs(old_player_score - target_score)
 	var new_diff_enemy = abs(new_enemy_score - target_score)
@@ -162,7 +213,6 @@ func apply_operation(current: int, sign: String, value: int) -> int:
 			else:
 				return current
 	return current
-
 
 func check_win(slot) -> bool:
 	var score = int(slot.label_score_reference.text)

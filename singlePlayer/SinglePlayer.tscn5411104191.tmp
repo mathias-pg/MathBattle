@@ -115,6 +115,7 @@ text = "Easy"
 
 [node name="BattleManager" type="Node" parent="."]
 script = ExtResource("12_6357o")
+current_bot_level = null
 
 [node name="BattleTimer" type="Timer" parent="BattleManager"]
 
