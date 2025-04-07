@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-[gd_scene load_steps=18 format=3 uid="uid://bd0xsjc2v0spu"]
-
-[ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
-[ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="2_cmgho"]
-[ext_resource type="PackedScene" uid="uid://fwsjyr0jrj1b" path="res://Cards/CardSlotGentil.tscn" id="4_180bv"]
-[ext_resource type="Script" uid="uid://coc6tpav8sxh4" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
-[ext_resource type="Script" uid="uid://fbiceo2g462n" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
-=======
 [gd_scene load_steps=18 format=3 uid="uid://eps17q0c6kg"]
 
 [ext_resource type="Script" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
@@ -14,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bfq3tghippdnf" path="res://Cards/CardSlotGentil.tscn" id="4_180bv"]
 [ext_resource type="Script" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
 [ext_resource type="Script" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
->>>>>>> 3fd2be846d867924089d6de8f4e148e3a83aa2cd
 [ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="5_mmgy7"]
 [ext_resource type="Script" path="res://SinglePlayer/EnnemyHand.gd" id="5_qd2uy"]
 [ext_resource type="Script" path="res://SinglePlayer/InputManager.gd" id="6_fssk3"]
