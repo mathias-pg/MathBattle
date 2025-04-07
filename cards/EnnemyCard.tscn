@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://raeltk24qyse"]
 
-[ext_resource type="Script" path="res://Cards/EnnemyCard.gd" id="1_xa5h8"]
+[ext_resource type="Script" uid="uid://dppne57evntpl" path="res://Cards/EnnemyCard.gd" id="1_xa5h8"]
 [ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="2_hcols"]
 [ext_resource type="Texture2D" uid="uid://fo5bd1ei3mns" path="res://Cards/pique/plus1.png" id="3_6fqe1"]
 
@@ -108,8 +108,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gqasr"]
 _data = {
-"RESET": SubResource("Animation_dowin"),
-"card_flip": SubResource("Animation_annjg")
+&"RESET": SubResource("Animation_dowin"),
+&"card_flip": SubResource("Animation_annjg")
 }
 
 [node name="Card" type="Node2D"]

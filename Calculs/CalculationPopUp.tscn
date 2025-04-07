@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxtqkcmwro3i5"]
 
-[ext_resource type="Script" path="res://Calculs/CalculationPopUp.gd" id="1_y51u1"]
+[ext_resource type="Script" uid="uid://bjl0j04tg0l8y" path="res://Calculs/CalculationPopUp.gd" id="1_y51u1"]
 
 [node name="CalculationPopUp" type="Window"]
 initial_position = 2
