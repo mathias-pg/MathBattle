@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://intpobk35g8s"]
+[gd_scene load_steps=7 format=3 uid="uid://intpobk35g8s"]
 
 [ext_resource type="Script" uid="uid://de1nbk4bmlmm0" path="res://MainMenu/PageAccueil.gd" id="1_dgfws"]
 [ext_resource type="Texture2D" uid="uid://cisk33fr45qx3" path="res://MainMenu/ecran_accueil.jpg" id="1_gtyvk"]
-[ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://Fonts/Softizen.otf" id="2_ujjrl"]
 [ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="3_35fwm"]
 [ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="5_5ty87"]
 [ext_resource type="AudioStream" uid="uid://bpkdastx21pjm" path="res://Songs/menu_sound.mp3" id="5_jgwxx"]

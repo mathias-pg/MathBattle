@@ -10,15 +10,15 @@ func _process(delta: float) -> void:
 
 
 func _on_btn_easy_button_down() -> void:
-	GlobalData.difficulty = "easy"
+	GlobalDifficulty.difficulty = "easy"
 	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayer.tscn")
 
 
 func _on_btn_medium_button_down() -> void:
-	GlobalData.difficulty = "medium"
+	GlobalDifficulty.difficulty = "medium"
 	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayer.tscn")
 
 
 func _on_btn_hard_button_down() -> void:
-	GlobalData.difficulty = "hard"
+	GlobalDifficulty.difficulty = "hard"
 	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayer.tscn")

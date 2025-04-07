@@ -32,8 +32,7 @@ func _ready():
 	target_score = randi() % (150 - 80 + 1) + 80
 	target_score_label.text = "Score à atteindre : " + str(target_score)
 	
-	# Configuration du niveau de difficulté à partir de GlobalData.difficulty
-	match GlobalData.difficulty:
+	match GlobalDifficulty.difficulty:
 		"easy":
 			current_bot_level = BotLevel.EASY
 			label_diff.text = "Easy"
