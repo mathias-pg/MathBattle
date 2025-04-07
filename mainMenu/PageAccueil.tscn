@@ -1,19 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://intpobk35g8s"]
+[gd_scene load_steps=6 format=3 uid="uid://intpobk35g8s"]
 
 [ext_resource type="Script" uid="uid://de1nbk4bmlmm0" path="res://MainMenu/PageAccueil.gd" id="1_dgfws"]
+<<<<<<< HEAD
+=======
 [ext_resource type="Texture2D" uid="uid://cisk33fr45qx3" path="res://MainMenu/ecran_accueil.jpg" id="1_gtyvk"]
 [ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://Fonts/Softizen.otf" id="2_ujjrl"]
+>>>>>>> bf1f53d9c7862a79527ec1058bc682bc016179b8
 [ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="3_35fwm"]
 [ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="5_5ty87"]
 [ext_resource type="AudioStream" uid="uid://bpkdastx21pjm" path="res://Songs/menu_sound.mp3" id="5_jgwxx"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_vdev1"]
-font = ExtResource("2_ujjrl")
-font_size = 55
-font_color = Color(0, 0, 0, 1)
-shadow_size = 10
-shadow_color = Color(0.537408, 0.522074, 0.999994, 1)
-shadow_offset = Vector2(3, 3)
+[ext_resource type="VideoStream" uid="uid://cp1btya80hjiv" path="res://videoAccueil/homescreenfinal.ogv" id="6_5ty87"]
 
 [node name="MenuPrincipal" type="Control"]
 layout_mode = 3
@@ -31,21 +27,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_gtyvk")
 expand_mode = 3
 
-[node name="Titre" type="Label" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Background"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -183.0
-offset_top = 127.0
-offset_right = 184.0
-offset_bottom = 200.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1880.0
+offset_bottom = -1040.0
 grow_horizontal = 2
-text = "MATHBATTLE"
-label_settings = SubResource("LabelSettings_vdev1")
+grow_vertical = 2
+scale = Vector2(47.9335, 27.0086)
+stream = ExtResource("6_5ty87")
+autoplay = true
+expand = true
+loop = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

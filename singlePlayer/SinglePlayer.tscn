@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+[gd_scene load_steps=18 format=3 uid="uid://eps17q0c6kg"]
+
+[ext_resource type="Script" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
+[ext_resource type="Script" path="res://Cards/CardManager.gd" id="2_cmgho"]
+[ext_resource type="PackedScene" uid="uid://bfq3tghippdnf" path="res://Cards/CardSlotGentil.tscn" id="4_180bv"]
+[ext_resource type="Script" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
+[ext_resource type="Script" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
+[ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="5_mmgy7"]
+[ext_resource type="Script" path="res://SinglePlayer/EnnemyHand.gd" id="5_qd2uy"]
+[ext_resource type="Script" path="res://SinglePlayer/InputManager.gd" id="6_fssk3"]
+[ext_resource type="Script" path="res://SinglePlayer/OpponentDeck.gd" id="8_7ng0o"]
+[ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://Fonts/Softizen.otf" id="8_t4ucr"]
+[ext_resource type="Script" path="res://SinglePlayer/BattleManager.gd" id="10_poomt"]
+[ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="11_ngfd3"]
+[ext_resource type="AudioStream" uid="uid://bslnr06y3kgr8" path="res://Songs/flipcard_sound.mp3" id="13_lscxn"]
+[ext_resource type="AudioStream" uid="uid://cthmf86x0x8q0" path="res://Songs/card_sound.mp3" id="14_hnqei"]
+[ext_resource type="Texture2D" uid="uid://djplr18pmxnt2" path="res://Cards/oppTable.png" id="15_mggps"]
+[ext_resource type="Texture2D" uid="uid://rggn3domrceh" path="res://Cards/ourTable.png" id="16_2kf8w"]
+=======
 [gd_scene load_steps=18 format=3 uid="uid://baoc1cj3vdjhj"]
 
 [ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_mggps"]
@@ -16,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://cthmf86x0x8q0" path="res://Songs/card_sound.mp3" id="14_wxb85"]
 [ext_resource type="Texture2D" uid="uid://djplr18pmxnt2" path="res://Cards/oppTable.png" id="15_i86yq"]
 [ext_resource type="Texture2D" uid="uid://bfy2btw5kx44e" path="res://Cards/ourTable.png" id="16_brj4e"]
+>>>>>>> bf1f53d9c7862a79527ec1058bc682bc016179b8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo0al"]
 size = Vector2(112, 156)
