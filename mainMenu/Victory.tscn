@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d061acb2abbpj"]
 
-[ext_resource type="Script" uid="uid://c05rbii0nhmla" path="res://MainMenu/Victory.gd" id="1_kxb1l"]
+[ext_resource type="Script" path="res://MainMenu/Victory.gd" id="1_kxb1l"]
 [ext_resource type="Texture2D" uid="uid://cdovjoucjqv6b" path="res://MainMenu/victoire.png" id="2_emm4u"]
 
 [node name="Victory" type="Control"]

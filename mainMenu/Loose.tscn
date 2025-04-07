@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pgtubjbok34n"]
 
-[ext_resource type="Script" uid="uid://b1hbxrl63gqt6" path="res://MainMenu/Loose.gd" id="1_ay685"]
+[ext_resource type="Script" path="res://MainMenu/Loose.gd" id="1_ay685"]
 [ext_resource type="Texture2D" uid="uid://ddcjcomi4hvff" path="res://MainMenu/defaite.png" id="2_rchjb"]
 
 [node name="Loose" type="Control"]
