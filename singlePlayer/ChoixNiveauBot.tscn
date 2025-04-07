@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3qdvceyxekag"]
 
 [ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="1_bfui1"]
-[ext_resource type="Script" path="res://SinglePlayer/ChoixNiveauBot.gd" id="1_wxmp6"]
+[ext_resource type="Script" uid="uid://vmwmlivx1xf0" path="res://SinglePlayer/ChoixNiveauBot.gd" id="1_wxmp6"]
 
 [node name="ChoixNiveauBot" type="Control"]
 layout_mode = 3

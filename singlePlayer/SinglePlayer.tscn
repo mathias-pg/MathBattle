@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=18 format=3 uid="uid://eps17q0c6kg"]
 
 [ext_resource type="Script" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
@@ -16,36 +17,56 @@
 [ext_resource type="AudioStream" uid="uid://cthmf86x0x8q0" path="res://Songs/card_sound.mp3" id="14_hnqei"]
 [ext_resource type="Texture2D" uid="uid://djplr18pmxnt2" path="res://Cards/oppTable.png" id="15_mggps"]
 [ext_resource type="Texture2D" uid="uid://rggn3domrceh" path="res://Cards/ourTable.png" id="16_2kf8w"]
+=======
+[gd_scene load_steps=18 format=3 uid="uid://baoc1cj3vdjhj"]
+
+[ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_mggps"]
+[ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="2_2kf8w"]
+[ext_resource type="PackedScene" uid="uid://fwsjyr0jrj1b" path="res://Cards/CardSlotGentil.tscn" id="3_wgw7v"]
+[ext_resource type="Script" uid="uid://fbiceo2g462n" path="res://SinglePlayer/PlayerHand.gd" id="4_q4jlc"]
+[ext_resource type="Script" uid="uid://dw2hj3wqeqf41" path="res://SinglePlayer/EnnemyHand.gd" id="5_3pmbf"]
+[ext_resource type="Script" uid="uid://coc6tpav8sxh4" path="res://SinglePlayer/Deck.gd" id="6_b2xk7"]
+[ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="7_yfmmp"]
+[ext_resource type="Script" uid="uid://degxgoehq0c2a" path="res://SinglePlayer/OpponentDeck.gd" id="8_ppkuf"]
+[ext_resource type="Script" uid="uid://dlju5ki6b48st" path="res://SinglePlayer/InputManager.gd" id="9_k720q"]
+[ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://Fonts/Softizen.otf" id="10_bbjom"]
+[ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="11_a1p81"]
+[ext_resource type="Script" uid="uid://dxt6eu840qhtm" path="res://SinglePlayer/BattleManager.gd" id="12_6357o"]
+[ext_resource type="AudioStream" uid="uid://bslnr06y3kgr8" path="res://Songs/flipcard_sound.mp3" id="13_un282"]
+[ext_resource type="AudioStream" uid="uid://cthmf86x0x8q0" path="res://Songs/card_sound.mp3" id="14_wxb85"]
+[ext_resource type="Texture2D" uid="uid://djplr18pmxnt2" path="res://Cards/oppTable.png" id="15_i86yq"]
+[ext_resource type="Texture2D" uid="uid://bfy2btw5kx44e" path="res://Cards/ourTable.png" id="16_brj4e"]
+>>>>>>> bf1f53d9c7862a79527ec1058bc682bc016179b8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo0al"]
 size = Vector2(112, 156)
 
 [node name="SinglePlayer" type="Node2D"]
-script = ExtResource("1_lxhxw")
+script = ExtResource("1_mggps")
 
 [node name="CardManager" type="Node2D" parent="."]
-script = ExtResource("2_cmgho")
+script = ExtResource("2_2kf8w")
 
-[node name="CardSlotOtherPlayer" parent="." instance=ExtResource("4_180bv")]
-position = Vector2(768, 531)
+[node name="CardSlotOtherPlayer" parent="." instance=ExtResource("3_wgw7v")]
+position = Vector2(768, 570)
 
-[node name="CardSlotPlayer" parent="." instance=ExtResource("4_180bv")]
-position = Vector2(1103, 525)
+[node name="CardSlotPlayer" parent="." instance=ExtResource("3_wgw7v")]
+position = Vector2(1103, 570)
 
 [node name="PlayerHand" type="Node2D" parent="."]
-script = ExtResource("4_qw3rp")
+script = ExtResource("4_q4jlc")
 
 [node name="EnnemyHand" type="Node2D" parent="."]
-script = ExtResource("5_qd2uy")
+script = ExtResource("5_3pmbf")
 
 [node name="Deck" type="Node2D" parent="."]
 position = Vector2(1600, 530)
-script = ExtResource("4_n18px")
+script = ExtResource("6_b2xk7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Deck"]
 z_index = -2
 scale = Vector2(0.0385344, 0.0409868)
-texture = ExtResource("5_mmgy7")
+texture = ExtResource("7_yfmmp")
 
 [node name="Area2D" type="Area2D" parent="Deck"]
 collision_layer = 4
@@ -56,7 +77,7 @@ shape = SubResource("RectangleShape2D_qo0al")
 
 [node name="OpponentDeck" type="Node2D" parent="."]
 position = Vector2(1600, 530)
-script = ExtResource("8_7ng0o")
+script = ExtResource("8_ppkuf")
 
 [node name="Area2D" type="Area2D" parent="OpponentDeck"]
 collision_layer = 4
@@ -66,53 +87,53 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_qo0al")
 
 [node name="InputManager" type="Node2D" parent="."]
-script = ExtResource("6_fssk3")
+script = ExtResource("9_k720q")
 
 [node name="LabelTargetScore" type="Label" parent="."]
-offset_left = 420.0
+offset_left = 200.0
 offset_top = 490.0
-offset_right = 635.0
+offset_right = 415.0
 offset_bottom = 518.0
-theme_override_fonts/font = ExtResource("8_t4ucr")
+theme_override_fonts/font = ExtResource("10_bbjom")
 theme_override_font_sizes/font_size = 20
 text = "Score a atteindre :"
 
 [node name="LabelScore" type="Label" parent="."]
-offset_left = 510.0
-offset_top = 530.0
-offset_right = 550.0
-offset_bottom = 564.0
-theme_override_fonts/font = ExtResource("8_t4ucr")
+offset_left = 430.0
+offset_top = 487.0
+offset_right = 470.0
+offset_bottom = 521.0
+theme_override_fonts/font = ExtResource("10_bbjom")
 theme_override_font_sizes/font_size = 25
 text = "0"
 
 [node name="LabelTour" type="Label" parent="."]
 offset_left = 895.0
-offset_top = 710.0
+offset_top = 740.0
 offset_right = 1040.0
-offset_bottom = 740.0
-theme_override_fonts/font = ExtResource("11_ngfd3")
+offset_bottom = 770.0
+theme_override_fonts/font = ExtResource("11_a1p81")
 theme_override_font_sizes/font_size = 23
 text = "Tour du joueur"
 
 [node name="BattleManager" type="Node" parent="."]
-script = ExtResource("10_poomt")
+script = ExtResource("12_6357o")
 
 [node name="BattleTimer" type="Timer" parent="BattleManager"]
 
 [node name="AudioStreamPlayerFlipCard" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_lscxn")
+stream = ExtResource("13_un282")
 
 [node name="AudioStreamPlayerCardSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_hnqei")
+stream = ExtResource("14_wxb85")
 volume_db = -4.394
 
 [node name="ImageTableEnnemi" type="Sprite2D" parent="."]
-position = Vector2(774, 464.24)
+position = Vector2(774, 504.5)
 scale = Vector2(0.523799, 0.578741)
-texture = ExtResource("15_mggps")
+texture = ExtResource("15_i86yq")
 
 [node name="ImageTableGentil" type="Sprite2D" parent="."]
-position = Vector2(1106, 469.701)
+position = Vector2(1107, 512)
 scale = Vector2(0.486362, 0.518976)
-texture = ExtResource("16_2kf8w")
+texture = ExtResource("16_brj4e")
