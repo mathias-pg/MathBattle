@@ -14,30 +14,73 @@ var card_database_reference
 func _ready() -> void:
 	card_database_reference = preload("res://Cards/CardDataBase.gd")
 	center_screen_x = get_viewport().size.x / 2
-	
+
 	var card_scene = preload(CARD_SCENE_PATH)
+
 	for i in range(HAND_COUNT):
-		var keys = card_database_reference.CARD_TEXTURES.keys()
-		var random_index = randi() % keys.size() 
-		var random_key = keys[random_index]
+		# Tirage pondéré
+		var weighted_keys := []
+		for key in card_database_reference.CARD_TEXTURES.keys():
+			if key.begins_with("+") or key.begins_with("-"):
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+			elif key.begins_with("x") or key.begins_with("÷"):
+				weighted_keys.append(key)
+
+		var random_index = randi() % weighted_keys.size()
+		var random_key = weighted_keys[random_index]
 		var random_path = card_database_reference.CARD_TEXTURES[random_key]
-	
+
 		var new_card = card_scene.instantiate()
 		var sprite_node = new_card.get_node("CardImage")
+		
+		# 👇 La carte de l’ennemi est face cachée
 		sprite_node.visible = false
 		sprite_node.texture = load(random_path)
+
 		$"../CardManager".add_child(new_card)
+
 		new_card.name = "Card"
 		new_card.card_value = card_database_reference.CARD_VALUES[random_key]
 		new_card.card_sign = card_database_reference.CARD_SIGNS[random_key]
+		
 		add_card_to_hand(new_card, DEFAULT_CARD_MOUV_SPEED)
+
 		
 func add_card_to_hand(card, speed):
+	if card == null:
+		# Tirage pondéré
+		var weighted_keys := []
+		for key in card_database_reference.CARD_TEXTURES.keys():
+			if key.begins_with("+") or key.begins_with("-"):
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+			elif key.begins_with("x") or key.begins_with("÷"):
+				weighted_keys.append(key)
+
+		var random_index = randi() % weighted_keys.size()
+		var random_key = weighted_keys[random_index]
+		var random_path = card_database_reference.CARD_TEXTURES[random_key]
+
+		card = preload(CARD_SCENE_PATH).instantiate()
+		var sprite_node = card.get_node("CardImage")
+		sprite_node.texture = load(random_path)
+
+		card.name = "Card"
+		card.card_value = card_database_reference.CARD_VALUES[random_key]
+		card.card_sign = card_database_reference.CARD_SIGNS[random_key]
+
+		$"../CardManager".add_child(card)
+
+	# Ajout à la main
 	if card not in player_hand:
 		player_hand.insert(0, card)
 		update_hand_positions(speed)
 	else:
 		animate_card_to_position(card, card.starting_position, DEFAULT_CARD_MOUV_SPEED)
+
 
 func update_hand_positions(speed):
 	for i in range(player_hand.size()):

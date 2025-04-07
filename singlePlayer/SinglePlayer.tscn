@@ -1,17 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bd0xsjc2v0spu"]
+[gd_scene load_steps=18 format=3 uid="uid://bd0xsjc2v0spu"]
 
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="2_cmgho"]
 [ext_resource type="PackedScene" uid="uid://fwsjyr0jrj1b" path="res://Cards/CardSlotGentil.tscn" id="4_180bv"]
 [ext_resource type="Script" uid="uid://coc6tpav8sxh4" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
 [ext_resource type="Script" uid="uid://fbiceo2g462n" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
-=======
-[ext_resource type="Script" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
-[ext_resource type="Script" path="res://Cards/CardManager.gd" id="2_cmgho"]
-[ext_resource type="Script" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
-[ext_resource type="Script" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
->>>>>>> 4b3c26f236e5531428df5e9e550d4b32dff37064
 [ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="5_mmgy7"]
 [ext_resource type="Script" uid="uid://dw2hj3wqeqf41" path="res://SinglePlayer/EnnemyHand.gd" id="5_qd2uy"]
 [ext_resource type="Script" uid="uid://dlju5ki6b48st" path="res://SinglePlayer/InputManager.gd" id="6_fssk3"]
@@ -33,10 +26,10 @@ script = ExtResource("1_lxhxw")
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("2_cmgho")
 
-[node name="CardSlotOtherPlayer" type="Node2D" parent="."]
+[node name="CardSlotOtherPlayer" parent="." instance=ExtResource("4_180bv")]
 position = Vector2(768, 531)
 
-[node name="CardSlotPlayer" type="Node2D" parent="."]
+[node name="CardSlotPlayer" parent="." instance=ExtResource("4_180bv")]
 position = Vector2(1103, 525)
 
 [node name="PlayerHand" type="Node2D" parent="."]
