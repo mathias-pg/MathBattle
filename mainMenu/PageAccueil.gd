@@ -18,3 +18,8 @@ func _on_btn_quitter_button_down() -> void:
 func _on_btn_bot_button_down() -> void:
 	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayer.tscn")
 	$AudioStreamPlayer.stop()
+
+
+func _on_btn_joueur_button_down() -> void:
+	get_tree().change_scene_to_file("res://MultiPlayer/ChoiceHoteClient.tscn")
+	$AudioStreamPlayer.stop()
