@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcrs8dufckikj"]
 
-[ext_resource type="Script" uid="uid://d0vv6lmboi1dp" path="res://Cards/Card.gd" id="1_nl2t5"]
+[ext_resource type="Script" path="res://Cards/Card.gd" id="1_nl2t5"]
 [ext_resource type="Texture2D" uid="uid://fo5bd1ei3mns" path="res://Cards/pique/plus1.png" id="1_stfrd"]
 [ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="2_1objf"]
 
@@ -111,8 +111,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gqasr"]
 _data = {
-&"RESET": SubResource("Animation_dowin"),
-&"card_flip": SubResource("Animation_annjg")
+"RESET": SubResource("Animation_dowin"),
+"card_flip": SubResource("Animation_annjg")
 }
 
 [node name="Card" type="Node2D"]
