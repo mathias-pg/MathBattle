@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=17 format=3 uid="uid://cp4h4e51hlqbg"]
+=======
+[gd_scene load_steps=18 format=3 uid="uid://eps17q0c6kg"]
+>>>>>>> a5d8abb7c9b7b1bd4a9cb6942f41f3ae610beed1
 
 [ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="2_cmgho"]
