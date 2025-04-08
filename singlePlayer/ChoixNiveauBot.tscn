@@ -97,10 +97,10 @@ script = ExtResource("1_wxmp6")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_right = 1923.0
+offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_0u00b")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

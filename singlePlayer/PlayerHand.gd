@@ -21,13 +21,12 @@ func _ready() -> void:
 		# Tirage pondéré
 		var weighted_keys := []
 		for key in card_database_reference.CARD_TEXTURES.keys():
-			if key.begins_with("+") or key.begins_with("-"):
-				# 3 chances sur 5
+			if key.begins_with("+"):
 				weighted_keys.append(key)
 				weighted_keys.append(key)
+			if key.begins_with("-"):
 				weighted_keys.append(key)
 			elif key.begins_with("x") or key.begins_with("÷"):
-				# 1 chance sur 5
 				weighted_keys.append(key)
 
 		var random_index = randi() % weighted_keys.size()

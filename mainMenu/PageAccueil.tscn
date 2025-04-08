@@ -49,9 +49,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -192.0
-offset_top = -42.0
+offset_top = 60.0
 offset_right = 193.0
-offset_bottom = 162.0
+offset_bottom = 283.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -60,14 +60,14 @@ theme_override_constants/separation = 30
 position = Vector2(-767.5, -498)
 
 [node name="BtnJoueur" type="Button" parent="VBoxContainer/Node2D"]
-offset_left = 686.5
-offset_top = 495.0
-offset_right = 1251.5
-offset_bottom = 542.0
-pivot_offset = Vector2(282.5, 23.5)
+offset_left = 767.5
+offset_top = 497.0
+offset_right = 1152.5
+offset_bottom = 544.0
+pivot_offset = Vector2(192.5, 23.5)
 theme_override_fonts/font = ExtResource("4_5ty87")
 theme_override_font_sizes/font_size = 30
-text = "Jouer contre un autre joueur"
+text = "Mode Classique"
 script = ExtResource("5_5ty87")
 
 [node name="BtnBot" type="Button" parent="VBoxContainer/Node2D"]
@@ -75,10 +75,10 @@ offset_left = 767.5
 offset_top = 584.0
 offset_right = 1152.5
 offset_bottom = 631.0
-pivot_offset = Vector2(193.5, 23.5)
+pivot_offset = Vector2(192.5, 23.5)
 theme_override_fonts/font = ExtResource("4_5ty87")
 theme_override_font_sizes/font_size = 30
-text = "Jouer contre un bot"
+text = "Mode Special"
 script = ExtResource("5_5ty87")
 
 [node name="BtnQuitter" type="Button" parent="VBoxContainer/Node2D"]

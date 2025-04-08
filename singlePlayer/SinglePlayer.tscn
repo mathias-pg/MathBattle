@@ -33,10 +33,10 @@ texture = ExtResource("2_mggps")
 script = ExtResource("2_cmgho")
 
 [node name="CardSlotOtherPlayer" parent="." instance=ExtResource("4_180bv")]
-position = Vector2(768, 570)
+position = Vector2(768, 600)
 
 [node name="CardSlotPlayer" parent="." instance=ExtResource("4_180bv")]
-position = Vector2(1103, 570)
+position = Vector2(1103, 600)
 
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("4_qw3rp")
@@ -94,9 +94,9 @@ text = "0"
 
 [node name="LabelTour" type="Label" parent="."]
 offset_left = 807.0
-offset_top = 740.0
+offset_top = 760.0
 offset_right = 1085.0
-offset_bottom = 771.0
+offset_bottom = 791.0
 theme_override_fonts/font = ExtResource("10_t6mgb")
 theme_override_font_sizes/font_size = 30
 text = "Tour du joueur"
@@ -107,16 +107,16 @@ offset_top = 10.0
 offset_right = 204.0
 offset_bottom = 43.0
 theme_override_fonts/font = ExtResource("10_t6mgb")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Difficulté actuelle :"
 
 [node name="LabelDifficulte" type="Label" parent="."]
-offset_left = 314.0
-offset_top = 17.0
-offset_right = 385.0
-offset_bottom = 50.0
+offset_left = 380.0
+offset_top = 20.0
+offset_right = 466.0
+offset_bottom = 53.0
 theme_override_fonts/font = ExtResource("10_t6mgb")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Easy"
 
 [node name="BattleManager" type="Node" parent="."]
@@ -132,11 +132,11 @@ stream = ExtResource("14_hnqei")
 volume_db = -4.394
 
 [node name="ImageTableEnnemi" type="Sprite2D" parent="."]
-position = Vector2(774, 504.5)
+position = Vector2(774, 534.5)
 scale = Vector2(0.523799, 0.578741)
 texture = ExtResource("15_mggps")
 
 [node name="ImageTableGentil" type="Sprite2D" parent="."]
-position = Vector2(1107, 512)
+position = Vector2(1107, 542)
 scale = Vector2(0.486362, 0.518976)
 texture = ExtResource("16_2kf8w")
