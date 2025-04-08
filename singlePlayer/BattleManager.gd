@@ -118,7 +118,6 @@ func set_player_cards_interaction(active: bool) -> void:
 			var collision_shape = card.get_node("Area2D/CollisionShape2D")
 			collision_shape.disabled = not active
 
-# --- Définition de la classe BotMove ---
 class BotMove:
 	var card
 	var slot
