@@ -17,6 +17,7 @@ func _on_btn_quitter_button_down() -> void:
 
 func _on_btn_special_button_down() -> void:
 	$AudioStreamPlayer.stop()
+	get_tree().change_scene_to_file("res://SinglePlayer/ChoixNiveauBotSpecial.tscn")
 
 
 func _on_btn_classique_button_down() -> void:
