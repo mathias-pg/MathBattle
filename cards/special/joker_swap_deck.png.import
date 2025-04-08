@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfuvd55amqcp6"
-path="res://.godot/imported/joker_echange_deck.png-cf8239e39330101ccf559a6ee68e43c0.ctex"
+path="res://.godot/imported/joker_swap_deck.png-5ac77f378c2cddf86e0b1e62214edda9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cards/special/joker_echange_deck.png"
-dest_files=["res://.godot/imported/joker_echange_deck.png-cf8239e39330101ccf559a6ee68e43c0.ctex"]
+source_file="res://Cards/special/joker_swap_deck.png"
+dest_files=["res://.godot/imported/joker_swap_deck.png-5ac77f378c2cddf86e0b1e62214edda9.ctex"]
 
 [params]
 
