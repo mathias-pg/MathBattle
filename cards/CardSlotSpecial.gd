@@ -99,6 +99,7 @@ func on_card_dropped(card):
 								weighted_keys.append(key)
 						elif key == "?" or key == "deck_swap" or key == "swap" or key == "inverse":
 							weighted_keys.append(key)
+							weighted_keys.append(key)
 					
 					var random_index = randi() % weighted_keys.size()
 					var random_key = weighted_keys[random_index]

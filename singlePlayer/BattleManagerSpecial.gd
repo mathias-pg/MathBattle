@@ -36,7 +36,6 @@ func _ready():
 	target_score = randi() % (150 - 80 + 1) + 80
 	target_score_label.text = "Score à atteindre : " + str(target_score)
 	
-	# Gestion de la difficulté globale à partir d'une variable globale (GlobalDifficulty)
 	match GlobalDifficulty.difficulty:
 		"easy":
 			current_bot_level = BotLevel.EASY
@@ -58,7 +57,6 @@ func start_player_turn():
 	label_tour.text = "Tour du joueur"
 	give_card_if_needed(player_hand, player_deck)
 	set_player_cards_interaction(true)
-	# Le joueur joue ; à la fin de son action, il appelle end_player_turn()
 
 func end_player_turn():
 	start_bot_turn()
@@ -180,6 +178,7 @@ func _on_bot_card_landed(card, slot):
 								weighted_keys.append(key)
 						elif key == "?" or key == "deck_swap" or key == "swap" or key == "inverse":
 							weighted_keys.append(key)
+							weighted_keys.append(key)
 					
 					var random_index = randi() % weighted_keys.size()
 					var random_key = weighted_keys[random_index]
@@ -237,7 +236,6 @@ func set_player_cards_interaction(active: bool) -> void:
 			var collision_shape = card.get_node("Area2D/CollisionShape2D")
 			collision_shape.disabled = not active
 
-# --- Classe interne pour représenter un coup ---
 class BotMove:
 	var card
 	var slot
@@ -255,14 +253,13 @@ func choose_random_move() -> BotMove:
 		return BotMove.new(card, player_slot)
 
 func choose_medium_move() -> BotMove:
-	# Niveau moyen : évalue les coups en calculant l'amélioration sur sa table
 	var enemy_score = int(enemy_slot.label_score_reference.text)
 	var best_move: BotMove = null
 	var best_improvement = 0
 	for card in enemy_hand.player_hand:
 		var new_enemy_score = apply_operation(enemy_score, card.card_sign, card.card_value)
 		var improvement = abs(enemy_score - target_score) - abs(new_enemy_score - target_score)
-		# Si la carte est spéciale, on ajoute un bonus léger au niveau medium
+
 		if card.card_sign in ["?", "inverse", "swap_deck", "swap"]:
 			improvement += 2
 		if improvement > best_improvement:
@@ -274,21 +271,18 @@ func choose_medium_move() -> BotMove:
 		return choose_random_move()
 
 func choose_hard_move() -> BotMove:
-	# Niveau difficile : évalue en tenant compte de sa table et celle du joueur
 	var enemy_score = int(enemy_slot.label_score_reference.text)
 	var player_score = int(player_slot.label_score_reference.text)
 	var best_move: BotMove = null
 	var best_score = -INF  
 	
 	for card in enemy_hand.player_hand:
-		# Hypothèse A : la jouer sur sa propre table
 		var new_enemy_score = apply_operation(enemy_score, card.card_sign, card.card_value)
 		var measure_a = evaluate_move(enemy_score, player_score, new_enemy_score, player_score, card.card_sign, true)
 		if measure_a > best_score:
 			best_score = measure_a
 			best_move = BotMove.new(card, enemy_slot)
 		
-		# Hypothèse B : la jouer sur la table du joueur
 		var new_player_score = apply_operation(player_score, card.card_sign, card.card_value)
 		var measure_b = evaluate_move(enemy_score, player_score, enemy_score, new_player_score, card.card_sign, false)
 		if measure_b > best_score:
@@ -314,19 +308,16 @@ func evaluate_move(old_enemy_score: int, old_player_score: int, new_enemy_score:
 	var new_diff_enemy = abs(new_enemy_score - target_score)
 	var new_diff_player = abs(new_player_score - target_score)
 	
-	var delta_enemy = old_diff_enemy - new_diff_enemy  # positif si amélioration pour le bot
-	var delta_player = new_diff_player - old_diff_player  # positif si le joueur s'éloigne
+	var delta_enemy = old_diff_enemy - new_diff_enemy  
+	var delta_player = new_diff_player - old_diff_player  
 	var score = delta_enemy * 2.0 + delta_player
-	
-	# Bonus pour victoire immédiate
+
 	if place_on_enemy_slot and new_diff_enemy == 0:
 		score += 9999
 	
-	# Pénalité pour utiliser "-" ou "÷" sans gain
 	if place_on_enemy_slot and (card_sign == "-" or card_sign == "÷") and new_diff_enemy != 0:
 		score -= 10
-	
-	# Bonus additionnel pour l'utilisation de cartes spéciales
+
 	if card_sign in ["?", "inverse", "swap_deck", "swap"]:
 		match current_bot_level:
 			BotLevel.HARD:
