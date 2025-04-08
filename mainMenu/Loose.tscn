@@ -508,7 +508,7 @@ script = ExtResource("1_ay685")
 position = Vector2(957, 546)
 sprite_frames = SubResource("SpriteFrames_uaj67")
 animation = &"animation_lose"
-frame_progress = 0.964205
+frame_progress = 0.860629
 
 [node name="BtnMenu" type="Button" parent="AnimatedSprite2D"]
 anchors_preset = 7

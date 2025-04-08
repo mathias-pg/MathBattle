@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvoxrradw30ca"]
+[gd_scene load_steps=17 format=3 uid="uid://eps17q0c6kg"]
 
 [ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="2_cmgho"]
@@ -9,9 +9,8 @@
 [ext_resource type="Script" uid="uid://dw2hj3wqeqf41" path="res://SinglePlayer/EnnemyHand.gd" id="5_qd2uy"]
 [ext_resource type="Script" uid="uid://dlju5ki6b48st" path="res://SinglePlayer/InputManager.gd" id="6_fssk3"]
 [ext_resource type="Script" uid="uid://degxgoehq0c2a" path="res://SinglePlayer/OpponentDeck.gd" id="8_7ng0o"]
-[ext_resource type="FontFile" uid="uid://d33fbwf8g0s77" path="res://Fonts/Softizen.otf" id="8_t4ucr"]
 [ext_resource type="Script" uid="uid://dxt6eu840qhtm" path="res://SinglePlayer/BattleManager.gd" id="10_poomt"]
-[ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="11_ngfd3"]
+[ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="10_t6mgb"]
 [ext_resource type="AudioStream" uid="uid://bslnr06y3kgr8" path="res://Songs/flipcard_sound.mp3" id="13_lscxn"]
 [ext_resource type="AudioStream" uid="uid://cthmf86x0x8q0" path="res://Songs/card_sound.mp3" id="14_hnqei"]
 [ext_resource type="Texture2D" uid="uid://djplr18pmxnt2" path="res://Cards/oppTable.png" id="15_mggps"]
@@ -73,16 +72,16 @@ offset_left = 200.0
 offset_top = 490.0
 offset_right = 415.0
 offset_bottom = 518.0
-theme_override_fonts/font = ExtResource("8_t4ucr")
+theme_override_fonts/font = ExtResource("10_t6mgb")
 theme_override_font_sizes/font_size = 20
 text = "Score a atteindre :"
 
 [node name="LabelScore" type="Label" parent="."]
-offset_left = 430.0
-offset_top = 487.0
-offset_right = 470.0
-offset_bottom = 521.0
-theme_override_fonts/font = ExtResource("8_t4ucr")
+offset_left = 451.0
+offset_top = 488.0
+offset_right = 491.0
+offset_bottom = 522.0
+theme_override_fonts/font = ExtResource("10_t6mgb")
 theme_override_font_sizes/font_size = 25
 text = "0"
 
@@ -91,7 +90,7 @@ offset_left = 895.0
 offset_top = 740.0
 offset_right = 1040.0
 offset_bottom = 770.0
-theme_override_fonts/font = ExtResource("11_ngfd3")
+theme_override_fonts/font = ExtResource("10_t6mgb")
 theme_override_font_sizes/font_size = 23
 text = "Tour du joueur"
 
@@ -100,16 +99,16 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 204.0
 offset_bottom = 43.0
-theme_override_fonts/font = ExtResource("11_ngfd3")
+theme_override_fonts/font = ExtResource("10_t6mgb")
 theme_override_font_sizes/font_size = 25
 text = "Difficulté actuelle :"
 
 [node name="LabelDifficulte" type="Label" parent="."]
-offset_left = 230.0
-offset_top = 10.0
-offset_right = 282.0
-offset_bottom = 43.0
-theme_override_fonts/font = ExtResource("11_ngfd3")
+offset_left = 314.0
+offset_top = 17.0
+offset_right = 385.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("10_t6mgb")
 theme_override_font_sizes/font_size = 25
 text = "Easy"
 

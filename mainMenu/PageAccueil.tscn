@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de1nbk4bmlmm0" path="res://MainMenu/PageAccueil.gd" id="1_dgfws"]
 [ext_resource type="Texture2D" uid="uid://cisk33fr45qx3" path="res://MainMenu/ecran_accueil.jpg" id="1_gtyvk"]
-[ext_resource type="FontFile" uid="uid://b13dd4a73bp7f" path="res://Fonts/Blinky Star.otf" id="3_35fwm"]
+[ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="4_5ty87"]
 [ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="5_5ty87"]
 [ext_resource type="AudioStream" uid="uid://bpkdastx21pjm" path="res://Songs/menu_sound.mp3" id="5_jgwxx"]
 [ext_resource type="VideoStream" uid="uid://cp1btya80hjiv" path="res://videoAccueil/homescreenfinal.ogv" id="6_xyuvc"]
@@ -56,23 +56,38 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
-[node name="BtnJoueur" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_35fwm")
+[node name="Node2D" type="Node2D" parent="VBoxContainer"]
+position = Vector2(-767.5, -498)
+
+[node name="BtnJoueur" type="Button" parent="VBoxContainer/Node2D"]
+offset_left = 686.5
+offset_top = 495.0
+offset_right = 1251.5
+offset_bottom = 542.0
+pivot_offset = Vector2(282.5, 23.5)
+theme_override_fonts/font = ExtResource("4_5ty87")
 theme_override_font_sizes/font_size = 30
 text = "Jouer contre un autre joueur"
 script = ExtResource("5_5ty87")
 
-[node name="BtnBot" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_35fwm")
+[node name="BtnBot" type="Button" parent="VBoxContainer/Node2D"]
+offset_left = 767.5
+offset_top = 584.0
+offset_right = 1152.5
+offset_bottom = 631.0
+pivot_offset = Vector2(193.5, 23.5)
+theme_override_fonts/font = ExtResource("4_5ty87")
 theme_override_font_sizes/font_size = 30
 text = "Jouer contre un bot"
 script = ExtResource("5_5ty87")
 
-[node name="BtnQuitter" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_35fwm")
+[node name="BtnQuitter" type="Button" parent="VBoxContainer/Node2D"]
+offset_left = 767.5
+offset_top = 673.0
+offset_right = 1152.5
+offset_bottom = 720.0
+pivot_offset = Vector2(192.5, 23.5)
+theme_override_fonts/font = ExtResource("4_5ty87")
 theme_override_font_sizes/font_size = 30
 text = "Quitter"
 script = ExtResource("5_5ty87")
@@ -82,6 +97,6 @@ stream = ExtResource("5_jgwxx")
 volume_db = -6.592
 autoplay = true
 
-[connection signal="button_down" from="VBoxContainer/BtnJoueur" to="." method="_on_btn_joueur_button_down"]
-[connection signal="button_down" from="VBoxContainer/BtnBot" to="." method="_on_btn_bot_button_down"]
-[connection signal="button_down" from="VBoxContainer/BtnQuitter" to="." method="_on_btn_quitter_button_down"]
+[connection signal="button_down" from="VBoxContainer/Node2D/BtnJoueur" to="." method="_on_btn_joueur_button_down"]
+[connection signal="button_down" from="VBoxContainer/Node2D/BtnBot" to="." method="_on_btn_bot_button_down"]
+[connection signal="button_down" from="VBoxContainer/Node2D/BtnQuitter" to="." method="_on_btn_quitter_button_down"]
