@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://eps17q0c6kg"]
+[gd_scene load_steps=18 format=3 uid="uid://eps17q0c6kg"]
 
 [ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="2_cmgho"]
+[ext_resource type="Texture2D" uid="uid://koqi6q5in1a" path="res://SinglePlayer/game_table_mathbattle.png" id="2_mggps"]
 [ext_resource type="PackedScene" uid="uid://fwsjyr0jrj1b" path="res://Cards/CardSlotGentil.tscn" id="4_180bv"]
 [ext_resource type="Script" uid="uid://coc6tpav8sxh4" path="res://SinglePlayer/Deck.gd" id="4_n18px"]
 [ext_resource type="Script" uid="uid://fbiceo2g462n" path="res://SinglePlayer/PlayerHand.gd" id="4_qw3rp"]
@@ -21,6 +22,12 @@ size = Vector2(112, 156)
 
 [node name="SinglePlayer" type="Node2D"]
 script = ExtResource("1_lxhxw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -4
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mggps")
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("2_cmgho")
@@ -68,30 +75,30 @@ shape = SubResource("RectangleShape2D_qo0al")
 script = ExtResource("6_fssk3")
 
 [node name="LabelTargetScore" type="Label" parent="."]
-offset_left = 200.0
-offset_top = 490.0
-offset_right = 415.0
-offset_bottom = 518.0
+offset_left = 127.0
+offset_top = 525.0
+offset_right = 485.0
+offset_bottom = 557.0
 theme_override_fonts/font = ExtResource("10_t6mgb")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 31
 text = "Score a atteindre :"
 
 [node name="LabelScore" type="Label" parent="."]
-offset_left = 451.0
-offset_top = 488.0
-offset_right = 491.0
-offset_bottom = 522.0
+offset_left = 510.0
+offset_top = 523.0
+offset_right = 550.0
+offset_bottom = 559.0
 theme_override_fonts/font = ExtResource("10_t6mgb")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 35
 text = "0"
 
 [node name="LabelTour" type="Label" parent="."]
-offset_left = 895.0
+offset_left = 807.0
 offset_top = 740.0
-offset_right = 1040.0
-offset_bottom = 770.0
+offset_right = 1085.0
+offset_bottom = 771.0
 theme_override_fonts/font = ExtResource("10_t6mgb")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 30
 text = "Tour du joueur"
 
 [node name="LabelTextDifficulte" type="Label" parent="."]

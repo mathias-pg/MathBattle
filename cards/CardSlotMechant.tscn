@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm5pmwf2xx0jv"]
+[gd_scene load_steps=5 format=3 uid="uid://cm5pmwf2xx0jv"]
 
 [ext_resource type="Script" uid="uid://djr3biv7pamjh" path="res://Cards/CardSlot.gd" id="1_4n71c"]
 [ext_resource type="Texture2D" uid="uid://b8nmxp2vncv2q" path="res://Cards/cardSlot.png" id="2_3nsn5"]
+[ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="3_3nsn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5m3j"]
 size = Vector2(112, 156)
@@ -34,4 +35,6 @@ offset_right = 5.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_3nsn5")
+theme_override_font_sizes/font_size = 35
 text = "1"

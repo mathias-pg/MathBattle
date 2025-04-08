@@ -3,7 +3,7 @@ extends Node2D
 const HAND_COUNT = 5
 const CARD_SCENE_PATH = "res://Cards/EnnemyCard.tscn"
 const CARD_WIDTH = 200
-const HAND_Y_POSITION = 150
+const HAND_Y_POSITION = 170
 const DEFAULT_CARD_MOUV_SPEED = 0.1
 
 var player_hand = []
