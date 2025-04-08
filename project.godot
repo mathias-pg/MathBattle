@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MathBattle"
-run/main_scene="res://MainMenu/PageAccueil.tscn"
+run/main_scene="uid://intpobk35g8s"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,3 +24,9 @@ window/size/viewport_height=1080
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[importer_defaults]
+
+animation_library={
+&"import_script/path": "uid://cu8n23eob0skw"
+}

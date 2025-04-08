@@ -10,7 +10,6 @@ var player_hand = []
 var center_screen_x
 var card_database_reference
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	card_database_reference = preload("res://Cards/CardDataBase.gd")
 	center_screen_x = get_viewport().size.x / 2
@@ -18,7 +17,6 @@ func _ready() -> void:
 	var card_scene = preload(CARD_SCENE_PATH)
 
 	for i in range(HAND_COUNT):
-		# Tirage pondéré
 		var weighted_keys := []
 		for key in card_database_reference.CARD_TEXTURES.keys():
 			if key.begins_with("+") or key.begins_with("-"):
@@ -35,7 +33,6 @@ func _ready() -> void:
 		var new_card = card_scene.instantiate()
 		var sprite_node = new_card.get_node("CardImage")
 		
-		# 👇 La carte de l’ennemi est face cachée
 		sprite_node.visible = false
 		sprite_node.texture = load(random_path)
 
