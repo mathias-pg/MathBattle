@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://eps17q0c6kg"]
+[gd_scene load_steps=19 format=3 uid="uid://eps17q0c6kg"]
 
 [ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="2_cmgho"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://cthmf86x0x8q0" path="res://Songs/card_sound.mp3" id="14_hnqei"]
 [ext_resource type="Texture2D" uid="uid://djplr18pmxnt2" path="res://Cards/oppTable.png" id="15_mggps"]
 [ext_resource type="Texture2D" uid="uid://bfy2btw5kx44e" path="res://Cards/ourTable.png" id="16_2kf8w"]
+[ext_resource type="Texture2D" uid="uid://dum3sv6q68pwl" path="res://SinglePlayer/fleche_retour.png" id="17_2kf8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo0al"]
 size = Vector2(112, 156)
@@ -25,8 +26,8 @@ script = ExtResource("1_lxhxw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -4
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_mggps")
 
 [node name="CardManager" type="Node2D" parent="."]
@@ -143,3 +144,23 @@ z_index = -2
 position = Vector2(1102, 543)
 scale = Vector2(0.584795, 0.547445)
 texture = ExtResource("16_2kf8w")
+
+[node name="BtnForfait" type="Button" parent="."]
+offset_left = 1530.0
+offset_top = 18.0
+offset_right = 1805.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("10_t6mgb")
+theme_override_font_sizes/font_size = 25
+text = "Déclarer forfait"
+
+[node name="BtnRetour" type="Button" parent="."]
+offset_left = 1832.0
+offset_top = 19.0
+offset_right = 2352.0
+offset_bottom = 539.0
+scale = Vector2(0.085, 0.085)
+icon = ExtResource("17_2kf8w")
+
+[connection signal="button_down" from="BtnForfait" to="." method="_on_btn_forfait_button_down"]
+[connection signal="button_down" from="BtnRetour" to="." method="_on_btn_retour_button_down"]

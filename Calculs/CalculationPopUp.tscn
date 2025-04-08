@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxtqkcmwro3i5"]
+[gd_scene load_steps=6 format=3 uid="uid://cxtqkcmwro3i5"]
 
 [ext_resource type="Script" uid="uid://bjl0j04tg0l8y" path="res://Calculs/CalculationPopUp.gd" id="1_y51u1"]
 [ext_resource type="Texture2D" uid="uid://c5px8csbw687n" path="res://SinglePlayer/countdown_calcul_mathbattle.png" id="2_55qvo"]
 [ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="3_hu6d3"]
 [ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="4_hu6d3"]
+[ext_resource type="AudioStream" uid="uid://bxcs1w3dyqpqj" path="res://Songs/countdown_sfx_mathbattle.mp3" id="5_76pry"]
 
 [node name="CalculationPopUp" type="Window"]
 initial_position = 2
@@ -77,3 +78,7 @@ script = ExtResource("4_hu6d3")
 offset_right = 800.0
 offset_bottom = 20.0
 color = Color(0.629853, 1, 0.600153, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_76pry")
+volume_db = -13.695

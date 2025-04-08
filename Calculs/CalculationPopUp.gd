@@ -16,6 +16,7 @@ func _ready():
 	hide() 
 
 func start_calculation(slot_score: int, sign: String, value: int) -> void:
+	$AudioStreamPlayer.play()
 	current_slot_score = slot_score
 	card_sign = sign
 	card_value = value
@@ -49,6 +50,7 @@ func _process(delta: float) -> void:
 		$TimeBar.size.x = full_width * ratio
 		
 func _on_btn_confirm_pressed():
+	$AudioStreamPlayer.stop()
 	var user_input_str = $txt_answer.text
 	if user_input_str == "":
 		_end_calculation(false)

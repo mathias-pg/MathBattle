@@ -15,10 +15,10 @@ func _on_btn_quitter_button_down() -> void:
 	$AudioStreamPlayer.stop()
 
 
-func _on_btn_bot_button_down() -> void:
+func _on_btn_special_button_down() -> void:
+	$AudioStreamPlayer.stop()
+
+
+func _on_btn_classique_button_down() -> void:
+	$AudioStreamPlayer.stop()
 	get_tree().change_scene_to_file("res://SinglePlayer/ChoixNiveauBot.tscn")
-	$AudioStreamPlayer.stop()
-
-
-func _on_btn_joueur_button_down() -> void:
-	$AudioStreamPlayer.stop()

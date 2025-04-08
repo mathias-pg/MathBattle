@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cisk33fr45qx3" path="res://MainMenu/ecran_accueil.jpg" id="1_gtyvk"]
 [ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="4_5ty87"]
 [ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="5_5ty87"]
-[ext_resource type="AudioStream" uid="uid://bpkdastx21pjm" path="res://Songs/menu_sound.mp3" id="5_jgwxx"]
+[ext_resource type="AudioStream" uid="uid://dafodthaqnj10" path="res://Songs/homescreen_theme_song_mathbattle.mp3" id="6_5ty87"]
 [ext_resource type="VideoStream" uid="uid://cp1btya80hjiv" path="res://videoAccueil/homescreenfinal.ogv" id="6_xyuvc"]
 
 [node name="MenuPrincipal" type="Control"]
@@ -59,7 +59,7 @@ theme_override_constants/separation = 30
 [node name="Node2D" type="Node2D" parent="VBoxContainer"]
 position = Vector2(-767.5, -498)
 
-[node name="BtnJoueur" type="Button" parent="VBoxContainer/Node2D"]
+[node name="BtnClassique" type="Button" parent="VBoxContainer/Node2D"]
 offset_left = 767.5
 offset_top = 497.0
 offset_right = 1152.5
@@ -70,7 +70,7 @@ theme_override_font_sizes/font_size = 30
 text = "Mode Classique"
 script = ExtResource("5_5ty87")
 
-[node name="BtnBot" type="Button" parent="VBoxContainer/Node2D"]
+[node name="BtnSpecial" type="Button" parent="VBoxContainer/Node2D"]
 offset_left = 767.5
 offset_top = 584.0
 offset_right = 1152.5
@@ -93,10 +93,10 @@ text = "Quitter"
 script = ExtResource("5_5ty87")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_jgwxx")
+stream = ExtResource("6_5ty87")
 volume_db = -6.592
 autoplay = true
 
-[connection signal="button_down" from="VBoxContainer/Node2D/BtnJoueur" to="." method="_on_btn_joueur_button_down"]
-[connection signal="button_down" from="VBoxContainer/Node2D/BtnBot" to="." method="_on_btn_bot_button_down"]
+[connection signal="button_down" from="VBoxContainer/Node2D/BtnClassique" to="." method="_on_btn_classique_button_down"]
+[connection signal="button_down" from="VBoxContainer/Node2D/BtnSpecial" to="." method="_on_btn_special_button_down"]
 [connection signal="button_down" from="VBoxContainer/Node2D/BtnQuitter" to="." method="_on_btn_quitter_button_down"]
