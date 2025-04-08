@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://eps17q0c6kg"]
+[gd_scene load_steps=18 format=3 uid="uid://bvoxrradw30ca"]
 
 [ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_lxhxw"]
 [ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="2_cmgho"]
