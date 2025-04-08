@@ -12,13 +12,22 @@ func _ready() -> void:
 	card_database_reference = preload("res://Cards/CardDataBase.gd")
 
 func draw_card():
+	var card_scene = preload(CARD_SCENE_PATH)
 	if $"../EnnemyHand".player_hand.size() < MAX_CARDS :
-		var keys = card_database_reference.CARD_TEXTURES.keys()
-		var random_index = randi() % keys.size() 
-		var random_key = keys[random_index]
+		var weighted_keys := []
+		for key in card_database_reference.CARD_TEXTURES.keys():
+			if key.begins_with("+") or key.begins_with("-"):
+				# 3 chances sur 5
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+			elif key.begins_with("x") or key.begins_with("÷"):
+				# 1 chance sur 5
+				weighted_keys.append(key)
+
+		var random_index = randi() % weighted_keys.size()
+		var random_key = weighted_keys[random_index]
 		var random_path = card_database_reference.CARD_TEXTURES[random_key]
-			
-		var card_scene = load(CARD_SCENE_PATH)
 		var new_card = card_scene.instantiate()
 		var sprite_node = new_card.get_node("CardImage")
 		sprite_node.visible = false
