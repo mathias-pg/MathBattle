@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://pgtubjbok34n"]
+[gd_scene load_steps=126 format=3 uid="uid://pgtubjbok34n"]
 
 [ext_resource type="Script" uid="uid://b1hbxrl63gqt6" path="res://MainMenu/Loose.gd" id="1_ay685"]
 [ext_resource type="Texture2D" uid="uid://ev871d8dk55o" path="res://animation_lose/animation_lose000.png" id="2_3y6dl"]
@@ -122,6 +122,8 @@
 [ext_resource type="Texture2D" uid="uid://cwwr7fjhqghpi" path="res://animation_lose/animation_lose118.png" id="120_68u4m"]
 [ext_resource type="Texture2D" uid="uid://boc6uepmp6ssq" path="res://animation_lose/animation_lose119.png" id="121_tblby"]
 [ext_resource type="Texture2D" uid="uid://b322wuufiwq4w" path="res://animation_lose/animation_lose120.png" id="122_ubq1v"]
+[ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="123_q8te4"]
+[ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="124_kn1d7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uaj67"]
 animations = [{
@@ -516,12 +518,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -1057.0
-offset_top = -787.0
-offset_right = -852.0
+offset_left = -1212.0
+offset_top = -795.0
+offset_right = -716.0
 offset_bottom = -756.0
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset = Vector2(248, 19.5)
+theme_override_fonts/font = ExtResource("123_q8te4")
+theme_override_font_sizes/font_size = 30
 text = "Retour au Menu Principal"
+script = ExtResource("124_kn1d7")
 
 [connection signal="button_down" from="AnimatedSprite2D/BtnMenu" to="." method="_on_btn_menu_button_down"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxtqkcmwro3i5"]
+[gd_scene load_steps=5 format=3 uid="uid://cxtqkcmwro3i5"]
 
 [ext_resource type="Script" uid="uid://bjl0j04tg0l8y" path="res://Calculs/CalculationPopUp.gd" id="1_y51u1"]
 [ext_resource type="Texture2D" uid="uid://c5px8csbw687n" path="res://SinglePlayer/countdown_calcul_mathbattle.png" id="2_55qvo"]
 [ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="3_hu6d3"]
+[ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="4_hu6d3"]
 
 [node name="CalculationPopUp" type="Window"]
 initial_position = 2
@@ -10,7 +11,7 @@ size = Vector2i(800, 400)
 script = ExtResource("1_y51u1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_top = 23.0
+offset_top = 20.0
 offset_right = 800.0
 offset_bottom = 400.0
 texture = ExtResource("2_55qvo")
@@ -26,6 +27,7 @@ offset_right = 20.0
 offset_bottom = 123.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_hu6d3")
+theme_override_font_sizes/font_size = 25
 
 [node name="lbl_timer" type="Label" parent="."]
 offset_left = 380.0
@@ -47,6 +49,7 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_hu6d3")
+theme_override_font_sizes/font_size = 20
 placeholder_text = "Entrer le résultat ici"
 
 [node name="btn_confirm" type="Button" parent="."]
@@ -61,9 +64,12 @@ offset_right = 31.5
 offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset = Vector2(49, 15.5)
 theme_override_fonts/font = ExtResource("3_hu6d3")
+theme_override_font_sizes/font_size = 20
 text = "Valider
 "
+script = ExtResource("4_hu6d3")
 
 [node name="timer_countdown" type="Timer" parent="."]
 

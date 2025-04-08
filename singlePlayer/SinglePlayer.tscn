@@ -85,11 +85,12 @@ text = "Score a atteindre :"
 
 [node name="LabelScore" type="Label" parent="."]
 offset_left = 510.0
-offset_top = 523.0
+offset_top = 518.0
 offset_right = 550.0
-offset_bottom = 559.0
+offset_bottom = 564.0
+theme_override_colors/font_color = Color(0.913725, 0, 0, 1)
 theme_override_fonts/font = ExtResource("10_t6mgb")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 45
 text = "0"
 
 [node name="LabelTour" type="Label" parent="."]
@@ -132,11 +133,13 @@ stream = ExtResource("14_hnqei")
 volume_db = -4.394
 
 [node name="ImageTableEnnemi" type="Sprite2D" parent="."]
-position = Vector2(774, 534.5)
-scale = Vector2(0.523799, 0.578741)
+z_index = -2
+position = Vector2(767.5, 543)
+scale = Vector2(0.577485, 0.545012)
 texture = ExtResource("15_mggps")
 
 [node name="ImageTableGentil" type="Sprite2D" parent="."]
-position = Vector2(1107, 542)
-scale = Vector2(0.486362, 0.518976)
+z_index = -2
+position = Vector2(1102, 543)
+scale = Vector2(0.584795, 0.547445)
 texture = ExtResource("16_2kf8w")

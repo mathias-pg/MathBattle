@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://d061acb2abbpj"]
+[gd_scene load_steps=124 format=3 uid="uid://d061acb2abbpj"]
 
 [ext_resource type="Script" uid="uid://c05rbii0nhmla" path="res://MainMenu/Victory.gd" id="1_kxb1l"]
 [ext_resource type="Texture2D" uid="uid://coh6o6avnmffv" path="res://animation_win/animation_win000.png" id="3_hogd6"]
@@ -119,7 +119,9 @@
 [ext_resource type="Texture2D" uid="uid://m8edtwf3i5d4" path="res://animation_win/animation_win117.png" id="118_rh0d0"]
 [ext_resource type="Texture2D" uid="uid://ds6rpg836ctj1" path="res://animation_win/animation_win118.png" id="119_cp2od"]
 [ext_resource type="Texture2D" uid="uid://b1gyohjiuppqb" path="res://animation_win/animation_win119.png" id="120_apbe6"]
+[ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="121_472yn"]
 [ext_resource type="Texture2D" uid="uid://b5fafplob6vv7" path="res://animation_win/animation_win120.png" id="121_krq4m"]
+[ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="122_tv4je"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_svxa3"]
 animations = [{
@@ -515,6 +517,10 @@ offset_right = -860.102
 offset_bottom = -804.822
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset = Vector2(243, 19.5)
+theme_override_fonts/font = ExtResource("121_472yn")
+theme_override_font_sizes/font_size = 30
 text = "Retour au Menu Prinicipal"
+script = ExtResource("122_tv4je")
 
 [connection signal="button_down" from="AnimatedSprite2D/BtnMenu" to="." method="_on_btn_menu_button_down"]
