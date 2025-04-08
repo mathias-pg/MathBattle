@@ -26,3 +26,8 @@ func _on_btn_hard_button_down() -> void:
 	$AudioStreamPlayer.stop()
 	GlobalDifficulty.difficulty = "hard"
 	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayer.tscn")
+
+
+func _on_btn_retour_button_down() -> void:
+	$AudioStreamPlayer.stop()
+	get_tree().change_scene_to_file("res://MainMenu/PageAccueil.tscn")

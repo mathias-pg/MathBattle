@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3qdvceyxekag"]
+[gd_scene load_steps=11 format=3 uid="uid://d3qdvceyxekag"]
 
 [ext_resource type="Script" uid="uid://vmwmlivx1xf0" path="res://SinglePlayer/ChoixNiveauBot.gd" id="1_wxmp6"]
 [ext_resource type="Texture2D" uid="uid://d03ln7mci8ge8" path="res://SinglePlayer/background_mathbattle_2.png" id="2_0u00b"]
 [ext_resource type="Texture2D" uid="uid://br3ox4lfj5i08" path="res://SinglePlayer/levelBot.png" id="3_4elvd"]
 [ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="3_4yp3u"]
 [ext_resource type="Script" uid="uid://dsadx4x4cqqai" path="res://SinglePlayer/hover_button.gd" id="4_4yp3u"]
+[ext_resource type="Texture2D" uid="uid://dum3sv6q68pwl" path="res://SinglePlayer/fleche_retour.png" id="6_d8k43"]
 [ext_resource type="AudioStream" uid="uid://bpkdastx21pjm" path="res://Songs/menu_sound.mp3" id="6_jtgm8"]
 
 [sub_resource type="Animation" id="Animation_0u00b"]
@@ -133,8 +134,9 @@ theme_override_constants/separation = 20
 [node name="BtnEasy" type="Button" parent="VBoxContainer/Node2D"]
 modulate = Color(0, 1, 0, 1)
 offset_left = -40.0
+offset_top = -600.0
 offset_right = 105.0
-offset_bottom = 41.0
+offset_bottom = -559.0
 pivot_offset = Vector2(72.5, 20.5)
 theme_override_fonts/font = ExtResource("3_4yp3u")
 theme_override_font_sizes/font_size = 25
@@ -144,9 +146,9 @@ script = ExtResource("4_4yp3u")
 [node name="BtnMedium" type="Button" parent="VBoxContainer/Node2D"]
 modulate = Color(1, 1, 0, 1)
 offset_left = -40.0
-offset_top = 60.0
+offset_top = -600.0
 offset_right = 105.0
-offset_bottom = 101.0
+offset_bottom = -559.0
 pivot_offset = Vector2(72.5, 20.5)
 theme_override_fonts/font = ExtResource("3_4yp3u")
 theme_override_font_sizes/font_size = 25
@@ -156,14 +158,23 @@ script = ExtResource("4_4yp3u")
 [node name="BtnHard" type="Button" parent="VBoxContainer/Node2D"]
 modulate = Color(1, 0, 0, 1)
 offset_left = -42.0
-offset_top = 120.0
+offset_top = -600.0
 offset_right = 103.0
-offset_bottom = 161.0
+offset_bottom = -559.0
 pivot_offset = Vector2(72.5, 20.5)
 theme_override_fonts/font = ExtResource("3_4yp3u")
 theme_override_font_sizes/font_size = 25
 text = "Hard"
 script = ExtResource("4_4yp3u")
+
+[node name="BtnRetour" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1764.0
+offset_top = 71.0
+offset_right = 2284.0
+offset_bottom = 591.0
+scale = Vector2(0.085, 0.085)
+icon = ExtResource("6_d8k43")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -177,3 +188,4 @@ volume_db = -5.582
 [connection signal="button_down" from="VBoxContainer/Node2D/BtnEasy" to="." method="_on_btn_easy_button_down"]
 [connection signal="button_down" from="VBoxContainer/Node2D/BtnMedium" to="." method="_on_btn_medium_button_down"]
 [connection signal="button_down" from="VBoxContainer/Node2D/BtnHard" to="." method="_on_btn_hard_button_down"]
+[connection signal="button_down" from="BtnRetour" to="." method="_on_btn_retour_button_down"]
