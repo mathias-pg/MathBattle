@@ -95,9 +95,13 @@ func _on_bot_card_landed(card, slot):
 	var new_score = apply_operation(current_score, card.card_sign, card.card_value)
 	slot.label_score_reference.text = str(new_score)
 
-	if check_win(slot):
-		win_bot()
-		return
+	var current_scene = get_tree().get_current_scene()
+	var slot_score = int(slot.label_score_reference.text)
+	if slot_score == current_scene.target_score:
+		if self.name == "CardSlotPlayer":
+			get_tree().change_scene_to_file("res://MainMenu/Victory.tscn")
+		else:
+			get_tree().change_scene_to_file("res://MainMenu/Loose.tscn")
 
 	var wait_tween = get_tree().create_tween()
 	wait_tween.tween_interval(1.0)
@@ -212,11 +216,3 @@ func apply_operation(current: int, sign: String, value: int) -> int:
 			else:
 				return current
 	return current
-
-func check_win(slot) -> bool:
-	var score = int(slot.label_score_reference.text)
-	return score == target_score
-
-func win_bot():
-	set_player_cards_interaction(false)
-	get_tree().change_scene_to_file("res://MainMenu/Loose.tscn")

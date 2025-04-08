@@ -134,9 +134,8 @@ theme_override_constants/separation = 20
 [node name="BtnEasy" type="Button" parent="VBoxContainer/Node2D"]
 modulate = Color(0, 1, 0, 1)
 offset_left = -40.0
-offset_top = -600.0
 offset_right = 105.0
-offset_bottom = -559.0
+offset_bottom = 41.0
 pivot_offset = Vector2(72.5, 20.5)
 theme_override_fonts/font = ExtResource("3_4yp3u")
 theme_override_font_sizes/font_size = 25
@@ -146,9 +145,9 @@ script = ExtResource("4_4yp3u")
 [node name="BtnMedium" type="Button" parent="VBoxContainer/Node2D"]
 modulate = Color(1, 1, 0, 1)
 offset_left = -40.0
-offset_top = -600.0
+offset_top = 60.0
 offset_right = 105.0
-offset_bottom = -559.0
+offset_bottom = 101.0
 pivot_offset = Vector2(72.5, 20.5)
 theme_override_fonts/font = ExtResource("3_4yp3u")
 theme_override_font_sizes/font_size = 25
@@ -158,9 +157,9 @@ script = ExtResource("4_4yp3u")
 [node name="BtnHard" type="Button" parent="VBoxContainer/Node2D"]
 modulate = Color(1, 0, 0, 1)
 offset_left = -42.0
-offset_top = -600.0
+offset_top = 120.0
 offset_right = 103.0
-offset_bottom = -559.0
+offset_bottom = 161.0
 pivot_offset = Vector2(72.5, 20.5)
 theme_override_fonts/font = ExtResource("3_4yp3u")
 theme_override_font_sizes/font_size = 25

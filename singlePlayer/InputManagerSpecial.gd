@@ -10,8 +10,8 @@ var card_manager_reference
 var deck_reference
 
 func _ready() -> void:
-	card_manager_reference = $"../CardManager"
-	deck_reference = $"../Deck"
+	card_manager_reference = $"../CardManagerSpecial"
+	deck_reference = $"../DeckSpecial"
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

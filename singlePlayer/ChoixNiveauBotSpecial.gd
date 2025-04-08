@@ -13,19 +13,19 @@ func _process(delta: float) -> void:
 func _on_btn_easy_button_down() -> void:
 	$AudioStreamPlayer.stop()
 	GlobalDifficulty.difficulty = "easy"
-	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayer.tscn")
+	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayerSpecial.tscn")
 
 
 func _on_btn_medium_button_down() -> void:
 	$AudioStreamPlayer.stop()
 	GlobalDifficulty.difficulty = "medium"
-	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayer.tscn")
+	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayerSpecial.tscn")
 
 
 func _on_btn_hard_button_down() -> void:
 	$AudioStreamPlayer.stop()
 	GlobalDifficulty.difficulty = "hard"
-	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayer.tscn")
+	get_tree().change_scene_to_file("res://SinglePlayer/SinglePlayerSpecial.tscn")
 
 
 func _on_btn_retour_button_down() -> void:

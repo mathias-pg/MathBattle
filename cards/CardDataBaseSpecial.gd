@@ -39,10 +39,10 @@ static var	 CARD_TEXTURES = {
 	"÷8": "res://Cards/coeur/diviser8.png",
 	"÷9": "res://Cards/coeur/diviser9.png",
 	
-	"?": "res://Cards/special/joker_interrogation.png",
-	"swap_deck": "res://Cards/special/joker_swap_deck.png",
-	"swap": "res://Cards/special/joker_swap.png",
-	"inverse": "res://Cards/special/joker_inversion.png"
+	"?": "res://Cards/special/jokerInterrogation.png",
+	"deck_swap": "res://Cards/special/jokerSwapDeck.png",
+	"swap": "res://Cards/special/jokerSwap.png",
+	"inverse": "res://Cards/special/jokerInversion.png"
 }
 
 static var CARD_VALUES = {
@@ -85,7 +85,7 @@ static var CARD_VALUES = {
 	"÷9": 9,
 	
 	"?": 0,
-	"swap_deck": 0,
+	"deck_swap": 0,
 	"swap": 0,
 	"inverse": 0
 }
@@ -130,7 +130,7 @@ static var CARD_SIGNS = {
 	"÷9": "÷",
 	
 	"?": "?",
-	"swap_deck": "swap_deck",
+	"deck_swap": "swap_deck",
 	"swap": "swap",
 	"inverse": "inverse"
 }

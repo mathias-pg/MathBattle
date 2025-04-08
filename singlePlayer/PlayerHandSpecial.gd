@@ -12,21 +12,38 @@ var card_database_reference
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	card_database_reference = preload("res://Cards/CardDataBase.gd")
+	card_database_reference = preload("res://Cards/CardDataBaseSpecial.gd")
 	center_screen_x = get_viewport().size.x / 2
 
 	var card_scene = preload(CARD_SCENE_PATH)
 
 	for i in range(HAND_COUNT):
-		# Tirage pondéré
 		var weighted_keys := []
 		for key in card_database_reference.CARD_TEXTURES.keys():
 			if key.begins_with("+"):
 				weighted_keys.append(key)
 				weighted_keys.append(key)
-			if key.begins_with("-"):
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+			elif key.begins_with("-"):
+				weighted_keys.append(key)
 				weighted_keys.append(key)
 			elif key.begins_with("x") or key.begins_with("÷"):
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+			elif key == "?" or key == "deck_swap" or key == "swap" or key == "inverse":
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
 				weighted_keys.append(key)
 
 		var random_index = randi() % weighted_keys.size()
@@ -36,7 +53,7 @@ func _ready() -> void:
 		var new_card = card_scene.instantiate()
 		var sprite_node = new_card.get_node("CardImage")
 		sprite_node.texture = load(random_path)
-		$"../CardManager".add_child(new_card)
+		$"../CardManagerSpecial".add_child(new_card)
 
 		new_card.name = "Card"
 		new_card.card_value = card_database_reference.CARD_VALUES[random_key]

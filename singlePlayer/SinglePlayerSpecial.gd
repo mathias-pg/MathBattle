@@ -13,4 +13,4 @@ func _on_btn_forfait_button_down() -> void:
 
 
 func _on_btn_retour_button_down() -> void:
-	get_tree().change_scene_to_file("res://SinglePlayer/ChoixNiveauBot.tscn")
+	get_tree().change_scene_to_file("res://SinglePlayer/ChoixNiveauBotSpecial.tscn")

@@ -1,18 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://sqqvaxa0gd4r"]
+[gd_scene load_steps=20 format=3 uid="uid://sqqvaxa0gd4r"]
 
-[ext_resource type="Script" uid="uid://cvelbasqmpiw" path="res://SinglePlayer/SinglePlayer.gd" id="1_6p15k"]
+[ext_resource type="Script" uid="uid://bftmwiumnxq7a" path="res://SinglePlayer/SinglePlayerSpecial.gd" id="1_x7g0q"]
 [ext_resource type="Texture2D" uid="uid://koqi6q5in1a" path="res://SinglePlayer/game_table_mathbattle.png" id="2_x7g0q"]
-[ext_resource type="Script" uid="uid://boclmx5c6sk5y" path="res://Cards/CardManager.gd" id="3_sjiyn"]
+[ext_resource type="Script" uid="uid://tcax24x5byqh" path="res://Cards/CardManagerSpecial.gd" id="3_sjiyn"]
 [ext_resource type="PackedScene" uid="uid://fwsjyr0jrj1b" path="res://Cards/CardSlotGentil.tscn" id="4_dsakb"]
-[ext_resource type="Script" uid="uid://fbiceo2g462n" path="res://SinglePlayer/PlayerHand.gd" id="5_h7rqy"]
-[ext_resource type="Script" uid="uid://dw2hj3wqeqf41" path="res://SinglePlayer/EnnemyHand.gd" id="6_dkdcv"]
-[ext_resource type="Script" uid="uid://coc6tpav8sxh4" path="res://SinglePlayer/Deck.gd" id="7_nxpiw"]
+[ext_resource type="Script" uid="uid://iyyfn13on5gh" path="res://Cards/CardSlotSpecial.gd" id="5_dsakb"]
+[ext_resource type="Script" uid="uid://cg2br6nantcxo" path="res://SinglePlayer/PlayerHandSpecial.gd" id="6_h7rqy"]
+[ext_resource type="Script" uid="uid://b562uie32r3hn" path="res://SinglePlayer/EnnemyHandSpecial.gd" id="7_dkdcv"]
 [ext_resource type="Texture2D" uid="uid://rtgiak0ehdpb" path="res://Cards/arriere_carte.png" id="8_fqo4r"]
-[ext_resource type="Script" uid="uid://degxgoehq0c2a" path="res://SinglePlayer/OpponentDeck.gd" id="9_wttp5"]
-[ext_resource type="Script" uid="uid://dlju5ki6b48st" path="res://SinglePlayer/InputManager.gd" id="10_wfwiw"]
+[ext_resource type="Script" uid="uid://cswoksadlknpq" path="res://SinglePlayer/DeckSpecial.gd" id="8_nxpiw"]
+[ext_resource type="Script" uid="uid://cy2pvv1y2tyhv" path="res://SinglePlayer/OpponentDeckSpecial.gd" id="10_fqo4r"]
 [ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="11_juwhw"]
-[ext_resource type="Script" uid="uid://dxt6eu840qhtm" path="res://SinglePlayer/BattleManager.gd" id="12_0p4o5"]
+[ext_resource type="Script" uid="uid://bq3em1isuiipr" path="res://SinglePlayer/InputManagerSpecial.gd" id="11_wttp5"]
 [ext_resource type="AudioStream" uid="uid://bslnr06y3kgr8" path="res://Songs/flipcard_sound.mp3" id="13_m3pcl"]
+[ext_resource type="Script" uid="uid://dixcvrqes0yo6" path="res://SinglePlayer/BattleManagerSpecial.gd" id="13_wfwiw"]
 [ext_resource type="AudioStream" uid="uid://cthmf86x0x8q0" path="res://Songs/card_sound.mp3" id="14_b0ume"]
 [ext_resource type="Texture2D" uid="uid://djplr18pmxnt2" path="res://Cards/oppTable.png" id="15_i8o5j"]
 [ext_resource type="Texture2D" uid="uid://bfy2btw5kx44e" path="res://Cards/ourTable.png" id="16_7hyml"]
@@ -21,8 +22,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo0al"]
 size = Vector2(112, 156)
 
-[node name="SinglePlayer" type="Node2D"]
-script = ExtResource("1_6p15k")
+[node name="SinglePlayerSpecial" type="Node2D"]
+script = ExtResource("1_x7g0q")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -4
@@ -30,50 +31,52 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_x7g0q")
 
-[node name="CardManager" type="Node2D" parent="."]
+[node name="CardManagerSpecial" type="Node2D" parent="."]
 script = ExtResource("3_sjiyn")
 
-[node name="CardSlotOtherPlayer" parent="." instance=ExtResource("4_dsakb")]
+[node name="CardSlotOtherPlayerSpecial" parent="." instance=ExtResource("4_dsakb")]
 position = Vector2(768, 600)
+script = ExtResource("5_dsakb")
 
-[node name="CardSlotPlayer" parent="." instance=ExtResource("4_dsakb")]
+[node name="CardSlotPlayerSpecial" parent="." instance=ExtResource("4_dsakb")]
 position = Vector2(1103, 600)
+script = ExtResource("5_dsakb")
 
-[node name="PlayerHand" type="Node2D" parent="."]
-script = ExtResource("5_h7rqy")
+[node name="PlayerHandSpecial" type="Node2D" parent="."]
+script = ExtResource("6_h7rqy")
 
-[node name="EnnemyHand" type="Node2D" parent="."]
-script = ExtResource("6_dkdcv")
+[node name="EnnemyHandSpecial" type="Node2D" parent="."]
+script = ExtResource("7_dkdcv")
 
-[node name="Deck" type="Node2D" parent="."]
+[node name="DeckSpecial" type="Node2D" parent="."]
 position = Vector2(1600, 530)
-script = ExtResource("7_nxpiw")
+script = ExtResource("8_nxpiw")
 
-[node name="Sprite2D" type="Sprite2D" parent="Deck"]
+[node name="Sprite2D" type="Sprite2D" parent="DeckSpecial"]
 z_index = -2
 scale = Vector2(0.0385344, 0.0409868)
 texture = ExtResource("8_fqo4r")
 
-[node name="Area2D" type="Area2D" parent="Deck"]
+[node name="Area2D" type="Area2D" parent="DeckSpecial"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeckSpecial/Area2D"]
 shape = SubResource("RectangleShape2D_qo0al")
 
-[node name="OpponentDeck" type="Node2D" parent="."]
+[node name="OpponentDeckSpecial" type="Node2D" parent="."]
 position = Vector2(1600, 530)
-script = ExtResource("9_wttp5")
+script = ExtResource("10_fqo4r")
 
-[node name="Area2D" type="Area2D" parent="OpponentDeck"]
+[node name="Area2D" type="Area2D" parent="OpponentDeckSpecial"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OpponentDeck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpponentDeckSpecial/Area2D"]
 shape = SubResource("RectangleShape2D_qo0al")
 
-[node name="InputManager" type="Node2D" parent="."]
-script = ExtResource("10_wfwiw")
+[node name="InputManagerSpecial" type="Node2D" parent="."]
+script = ExtResource("11_wttp5")
 
 [node name="LabelTargetScore" type="Label" parent="."]
 offset_left = 127.0
@@ -121,10 +124,10 @@ theme_override_fonts/font = ExtResource("11_juwhw")
 theme_override_font_sizes/font_size = 30
 text = "Easy"
 
-[node name="BattleManager" type="Node" parent="."]
-script = ExtResource("12_0p4o5")
+[node name="BattleManagerSpecial" type="Node" parent="."]
+script = ExtResource("13_wfwiw")
 
-[node name="BattleTimer" type="Timer" parent="BattleManager"]
+[node name="BattleTimer" type="Timer" parent="BattleManagerSpecial"]
 
 [node name="AudioStreamPlayerFlipCard" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_m3pcl")

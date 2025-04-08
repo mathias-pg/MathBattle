@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7lshp8ng4ftk"
-path="res://.godot/imported/joker_inversion.png-4ddd974d1c0a57ec9271370042fb1b9e.ctex"
+uid="uid://daahtca5ckvvy"
+path="res://.godot/imported/jokerInversion.png-4df948f026abcbc22bb5bac01fe0d348.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cards/special/joker_inversion.png"
-dest_files=["res://.godot/imported/joker_inversion.png-4ddd974d1c0a57ec9271370042fb1b9e.ctex"]
+source_file="res://Cards/special/jokerInversion.png"
+dest_files=["res://.godot/imported/jokerInversion.png-4df948f026abcbc22bb5bac01fe0d348.ctex"]
 
 [params]
 

@@ -11,7 +11,7 @@ var center_screen_x
 var card_database_reference
 
 func _ready() -> void:
-	card_database_reference = preload("res://Cards/CardDataBase.gd")
+	card_database_reference = preload("res://Cards/CardDataBaseSpecial.gd")
 	center_screen_x = get_viewport().size.x / 2
 
 	var card_scene = preload(CARD_SCENE_PATH)
@@ -22,9 +22,27 @@ func _ready() -> void:
 			if key.begins_with("+"):
 				weighted_keys.append(key)
 				weighted_keys.append(key)
-			if key.begins_with("-"):
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+			elif key.begins_with("-"):
+				weighted_keys.append(key)
 				weighted_keys.append(key)
 			elif key.begins_with("x") or key.begins_with("÷"):
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+			elif key == "?" or key == "deck_swap" or key == "swap" or key == "inverse":
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
+				weighted_keys.append(key)
 				weighted_keys.append(key)
 
 		var random_index = randi() % weighted_keys.size()
@@ -37,7 +55,7 @@ func _ready() -> void:
 		sprite_node.visible = false
 		sprite_node.texture = load(random_path)
 
-		$"../CardManager".add_child(new_card)
+		$"../CardManagerSpecial".add_child(new_card)
 
 		new_card.name = "Card"
 		new_card.card_value = card_database_reference.CARD_VALUES[random_key]
@@ -70,7 +88,7 @@ func add_card_to_hand(card, speed):
 		card.card_value = card_database_reference.CARD_VALUES[random_key]
 		card.card_sign = card_database_reference.CARD_SIGNS[random_key]
 
-		$"../CardManager".add_child(card)
+		$"../CardManagerSpecial".add_child(card)
 
 	# Ajout à la main
 	if card not in player_hand:

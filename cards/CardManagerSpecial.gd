@@ -12,8 +12,8 @@ var player_hand_reference
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-	player_hand_reference = $"../PlayerHand"
-	$"../InputManager".connect("left_mouse_button_released", on_left_click_released)
+	player_hand_reference = $"../PlayerHandSpecial"
+	$"../InputManagerSpecial".connect("left_mouse_button_released", on_left_click_released)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
