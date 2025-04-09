@@ -13,7 +13,8 @@ config_version=5
 config/name="MathBattle"
 run/main_scene="uid://intpobk35g8s"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bb052la8w0g47"
+config/windows_native_icon="res://Logo/logo.ico"
 
 [display]
 
