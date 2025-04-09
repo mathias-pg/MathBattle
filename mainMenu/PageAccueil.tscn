@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://intpobk35g8s"]
+[gd_scene load_steps=8 format=3 uid="uid://intpobk35g8s"]
 
 [ext_resource type="Script" uid="uid://de1nbk4bmlmm0" path="res://MainMenu/PageAccueil.gd" id="1_dgfws"]
 [ext_resource type="Texture2D" uid="uid://cisk33fr45qx3" path="res://MainMenu/ecran_accueil.jpg" id="1_gtyvk"]
 [ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="4_5ty87"]
 [ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="5_5ty87"]
 [ext_resource type="AudioStream" uid="uid://dafodthaqnj10" path="res://Songs/homescreen_theme_song_mathbattle.mp3" id="6_5ty87"]
+[ext_resource type="Texture2D" uid="uid://cjtcp4o77yamt" path="res://MainMenu/liste_regle.png" id="6_luujq"]
 [ext_resource type="VideoStream" uid="uid://cp1btya80hjiv" path="res://videoAccueil/homescreenfinal.ogv" id="6_xyuvc"]
 
 [node name="MenuPrincipal" type="Control"]
@@ -92,6 +93,25 @@ theme_override_font_sizes/font_size = 30
 text = "Quitter"
 script = ExtResource("5_5ty87")
 
+[node name="LabelRegles" type="Label" parent="."]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 931.0
+offset_right = 1058.0
+offset_bottom = 972.0
+theme_override_fonts/font = ExtResource("4_5ty87")
+theme_override_font_sizes/font_size = 30
+text = "REgles du jeu :"
+
+[node name="BtnRegles" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1077.0
+offset_top = 923.0
+offset_right = 1597.0
+offset_bottom = 1443.0
+scale = Vector2(0.085, 0.085)
+icon = ExtResource("6_luujq")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_5ty87")
 volume_db = -6.592
@@ -100,3 +120,4 @@ autoplay = true
 [connection signal="button_down" from="VBoxContainer/Node2D/BtnClassique" to="." method="_on_btn_classique_button_down"]
 [connection signal="button_down" from="VBoxContainer/Node2D/BtnSpecial" to="." method="_on_btn_special_button_down"]
 [connection signal="button_down" from="VBoxContainer/Node2D/BtnQuitter" to="." method="_on_btn_quitter_button_down"]
+[connection signal="button_down" from="BtnRegles" to="." method="_on_btn_regles_button_down"]

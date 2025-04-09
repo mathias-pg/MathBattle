@@ -1,0 +1,184 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3lfqu027aafq"]
+
+[ext_resource type="Script" uid="uid://bwhc7jdfnhkgx" path="res://MainMenu/ReglesJeu.gd" id="1_3ya5b"]
+[ext_resource type="Texture2D" uid="uid://d03ln7mci8ge8" path="res://SinglePlayer/background_mathbattle_2.png" id="1_7yiul"]
+[ext_resource type="FontFile" uid="uid://bffjsogwhypmg" path="res://Fonts/slkscr.ttf" id="4_d8gw7"]
+[ext_resource type="Script" uid="uid://hcmeqwaxog86" path="res://MainMenu/hover_button.gd" id="4_lfhdn"]
+
+[node name="ReglesJeu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3ya5b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7yiul")
+
+[node name="BtnRetour" type="Button" parent="."]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 871.0
+offset_right = 1193.0
+offset_bottom = 910.0
+pivot_offset = Vector2(238, 19.5)
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 30
+text = "Retour au Menu Principal"
+script = ExtResource("4_lfhdn")
+
+[node name="LabelButJeu" type="Label" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 130.0
+offset_right = 237.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(0.101961, 0.737255, 0.407843, 1)
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 25
+text = "But du jeu"
+
+[node name="LabelBut" type="Label" parent="LabelButJeu"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 32.0
+offset_right = 1677.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "Math Battle est un jeu de cartes éducatif où le but est de se rapprocher du score cible sur sa table en utilisant des opérations arithmétiques. "
+
+[node name="LabelBut2" type="Label" parent="LabelButJeu"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 57.0
+offset_right = 1165.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "Attention, on peut feiner l'adversaire en jouant sur sa table mais il peut également jouer sur notre table"
+
+[node name="LabelModeClassique" type="Label" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 244.0
+offset_right = 292.0
+offset_bottom = 267.0
+theme_override_colors/font_color = Color(0.701961, 0.792157, 0, 1)
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 25
+text = "Mode Classique"
+
+[node name="LabelClassique1" type="Label" parent="LabelModeClassique"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 35.0
+offset_right = 1018.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "Les joueurs n’utilisent que des cartes basiques qui réalisent des opérations standards :"
+
+[node name="LabelClassique2" type="Label" parent="LabelModeClassique"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 67.0
+offset_right = 247.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "- Addition : +1 a +9"
+
+[node name="LabelClassique3" type="Label" parent="LabelModeClassique"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 92.0
+offset_right = 294.0
+offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "- Soustraction : -1 a -9"
+
+[node name="LabelClassique4" type="Label" parent="LabelModeClassique"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 118.0
+offset_right = 315.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "- Multiplication : x2 a x9"
+
+[node name="LabelClassique5" type="Label" parent="LabelModeClassique"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 137.0
+offset_right = 240.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "- Division : ÷2 a ÷9"
+
+[node name="LabelModeSpecial" type="Label" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 433.0
+offset_right = 265.0
+offset_bottom = 456.0
+theme_override_colors/font_color = Color(0.457063, 0.338001, 0.758514, 1)
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 25
+text = "Mode Special"
+
+[node name="LabelSpecial1" type="Label" parent="LabelModeSpecial"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 37.0
+offset_right = 1072.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "En plus des cartes basiques, quatre cartes spéciales viennent modifier la dynamique de la partie :"
+
+[node name="LabelSpecial2" type="Label" parent="LabelModeSpecial"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 66.0
+offset_right = 590.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "- Inversion : Change le signe du score d’une table"
+
+[node name="LabeSpecial3" type="Label" parent="LabelModeSpecial"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 94.0
+offset_right = 823.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "- Aleatoire : Execute une opération aléatoire parmi les cartes basiques"
+
+[node name="LabelSpecial4" type="Label" parent="LabelModeSpecial"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 126.0
+offset_right = 592.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "- Swap Table : Echange les scores des deux tables"
+
+[node name="LabelSpecial5" type="Label" parent="LabelModeSpecial"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 152.0
+offset_right = 1055.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("4_d8gw7")
+theme_override_font_sizes/font_size = 18
+text = "- Swap Deck : Reinitialise le deck du joueur correspondant a la table ou la carte est posee"
+
+[connection signal="button_down" from="BtnRetour" to="." method="_on_btn_retour_button_down"]
